@@ -1,0 +1,2300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>瓜老师笔记 - 学习笔记与考试资料聚合</title>
+  <meta name="description" content="瓜老师笔记汇聚考研数学、英语四六级、政治冲刺等科目笔记与真题解析，按学科和题型整理高频考点，适合备考学生查找系统资料与复习路径。">
+  <meta name="keywords" content="瓜老师笔记">
+  <style>
+    /* ---------- 全局变量与重置 ---------- */
+    :root {
+      --color-primary: #2f6b4f;
+      --color-primary-light: #4a8c6a;
+      --color-primary-dark: #1e4a36;
+      --color-accent: #d97c2c;
+      --color-bg: #f7f6f1;
+      --color-surface: #ffffff;
+      --color-text-primary: #1e2a24;
+      --color-text-secondary: #4a5b52;
+      --color-text-tertiary: #7b8b81;
+      --color-border: #e2e0d8;
+      --color-border-light: #eeebe4;
+      --radius-card: 16px;
+      --radius-button: 40px;
+      --radius-tag: 20px;
+      --radius-banner: 20px;
+      --shadow-default: 0 4px 12px rgba(0,0,0,0.04);
+      --shadow-hover: 0 10px 24px rgba(0,0,0,0.08);
+      --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      --spacing-section: 2.5rem;
+      --header-height: 64px;
+      --announce-height: 42px;
+      --sticky-offset: calc(var(--announce-height) + var(--header-height));
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--sticky-offset);
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-bg);
+      color: var(--color-text-primary);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+
+    /* ---------- 吸顶公告条 + 页头 ---------- */
+    .sticky-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--color-surface);
+      backdrop-filter: blur(10px);
+      background-color: rgba(255,255,255,0.92);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .announce-bar {
+      height: var(--announce-height);
+      background-color: var(--color-primary-dark);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      font-size: 0.85rem;
+      overflow: hidden;
+    }
+
+    .announce-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      white-space: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .announce-inner::-webkit-scrollbar {
+      display: none;
+    }
+
+    .announce-brand {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #fff;
+      margin-right: 0.5rem;
+    }
+
+    .announce-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .announce-item .date {
+      color: rgba(255,255,255,0.65);
+      font-variant-numeric: tabular-nums;
+      font-size: 0.75rem;
+    }
+
+    .announce-item .badge {
+      background: var(--color-accent);
+      color: #fff;
+      padding: 0.1rem 0.5rem;
+      border-radius: 12px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .header {
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .brand-area {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-text {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--color-primary-dark);
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 0.25rem;
+    }
+
+    .main-nav a {
+      padding: 0.4rem 0.9rem;
+      border-radius: var(--radius-button);
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .main-nav a:hover {
+      background: var(--color-border-light);
+      color: var(--color-primary-dark);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .search-toggle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-secondary);
+      transition: background 0.2s;
+    }
+
+    .search-toggle:hover {
+      background: var(--color-border-light);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-secondary);
+    }
+
+    /* ---------- 首屏 ---------- */
+    .hero {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 0.8fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 640px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--color-primary-light);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.25rem 0.9rem;
+      border-radius: var(--radius-tag);
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.02em;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      line-height: 1.2;
+      color: var(--color-primary-dark);
+      margin-bottom: 1rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.75rem;
+      max-width: 560px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--color-primary);
+      color: #fff;
+      padding: 0.7rem 1.8rem;
+      border-radius: var(--radius-button);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: var(--shadow-default);
+    }
+
+    .btn-primary:hover {
+      background: var(--color-primary-dark);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: transparent;
+      color: var(--color-primary-dark);
+      padding: 0.7rem 1.8rem;
+      border-radius: var(--radius-button);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1.5px solid var(--color-primary);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: var(--color-border-light);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-visual svg {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      filter: drop-shadow(0 12px 24px rgba(47,107,79,0.12));
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-visual svg {
+        animation: none;
+      }
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    /* ---------- 主内容区三栏布局 ---------- */
+    .page-container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+      display: grid;
+      grid-template-columns: 180px 1fr 260px;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    /* 左侧频道索引 */
+    .channel-sidebar {
+      position: sticky;
+      top: var(--sticky-offset);
+      padding-top: 0.5rem;
+      max-height: calc(100vh - var(--sticky-offset));
+      overflow-y: auto;
+      scrollbar-width: thin;
+    }
+
+    .channel-sidebar h2 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-tertiary);
+      margin-bottom: 0.9rem;
+      font-weight: 600;
+    }
+
+    .channel-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .channel-list a {
+      display: block;
+      padding: 0.5rem 0.9rem;
+      border-radius: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .channel-list a:hover,
+    .channel-list a.active {
+      background: var(--color-primary-light);
+      color: #fff;
+    }
+
+    /* 主内容列 */
+    .main-content {
+      min-width: 0;
+    }
+
+    .section {
+      margin-bottom: var(--spacing-section);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      letter-spacing: -0.01em;
+    }
+
+    .section-header .more-link {
+      font-size: 0.85rem;
+      color: var(--color-primary);
+      font-weight: 500;
+      border-bottom: 1px dashed var(--color-primary-light);
+    }
+
+    /* 领域概览 */
+    .overview-text {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-default);
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--color-text-secondary);
+    }
+
+    .overview-text p + p {
+      margin-top: 0.85rem;
+    }
+
+    /* 精选卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-default);
+      transition: box-shadow 0.25s, transform 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      background: var(--color-border-light);
+    }
+
+    .card-body {
+      padding: 1rem 1.25rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: var(--radius-tag);
+      background: var(--color-border-light);
+      color: var(--color-text-secondary);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .tag-primary {
+      background: var(--color-primary-light);
+      color: #fff;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      line-height: 1.4;
+      margin-bottom: 0.45rem;
+    }
+
+    .card-desc {
+      font-size: 0.88rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: var(--color-text-tertiary);
+      border-top: 1px solid var(--color-border-light);
+      padding-top: 0.6rem;
+      margin-top: auto;
+    }
+
+    .card-meta .heat {
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+
+    /* 最新更新列表 */
+    .update-list {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      padding: 0.5rem 0;
+      box-shadow: var(--shadow-default);
+    }
+
+    .update-item {
+      display: flex;
+      align-items: baseline;
+      gap: 0.9rem;
+      padding: 0.8rem 1.5rem;
+      border-bottom: 1px solid var(--color-border-light);
+      transition: background 0.15s;
+    }
+
+    .update-item:last-child {
+      border-bottom: none;
+    }
+
+    .update-item:hover {
+      background: var(--color-bg);
+    }
+
+    .update-date {
+      font-size: 0.78rem;
+      color: var(--color-text-tertiary);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      min-width: 70px;
+    }
+
+    .update-title {
+      font-weight: 600;
+      color: var(--color-text-primary);
+      font-size: 0.95rem;
+      margin-right: 0.4rem;
+    }
+
+    .update-summary {
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* 分类入口标签云 */
+    .category-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .category-item {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-button);
+      padding: 0.5rem 1.2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .category-item:hover {
+      background: var(--color-primary-light);
+      border-color: var(--color-primary-light);
+      color: #fff;
+    }
+
+    .category-item .count {
+      font-size: 0.7rem;
+      background: var(--color-border-light);
+      color: var(--color-text-tertiary);
+      padding: 0.05rem 0.5rem;
+      border-radius: 10px;
+    }
+
+    .category-item:hover .count {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+
+    /* 深度解析正文 */
+    .deep-dive {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      padding: 2rem 2.25rem;
+      box-shadow: var(--shadow-default);
+    }
+
+    .deep-dive h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    .deep-dive h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin: 1.75rem 0 0.75rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 2px solid var(--color-border-light);
+    }
+
+    .deep-dive h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .deep-dive p {
+      font-size: 0.98rem;
+      line-height: 1.8;
+      color: var(--color-text-secondary);
+      margin-bottom: 0.85rem;
+    }
+
+    .deep-dive ul, .deep-dive ol {
+      margin: 0.75rem 0 1rem 1.25rem;
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+    }
+
+    .deep-dive li {
+      margin-bottom: 0.3rem;
+    }
+
+    .deep-dive strong {
+      color: var(--color-text-primary);
+      font-weight: 600;
+    }
+
+    .callout {
+      background: var(--color-bg);
+      border-left: 4px solid var(--color-primary);
+      padding: 0.9rem 1.25rem;
+      border-radius: 0 0.75rem 0.75rem 0;
+      margin: 1rem 0;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--color-text-secondary);
+    }
+
+    /* 体验指南 */
+    .guide-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .guide-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      padding: 1.5rem 1.75rem;
+      box-shadow: var(--shadow-default);
+    }
+
+    .guide-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .guide-card p {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--color-text-secondary);
+    }
+
+    .guide-card .step-num {
+      display: inline-block;
+      background: var(--color-primary-light);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      width: 1.5rem;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      text-align: center;
+      border-radius: 50%;
+      margin-right: 0.4rem;
+    }
+
+    /* FAQ */
+    .faq-list {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--color-border-light);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item summary {
+      padding: 1rem 1.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--color-text-primary);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.15s;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      font-size: 1.2rem;
+      color: var(--color-text-tertiary);
+      transition: transform 0.2s;
+      line-height: 1;
+    }
+
+    .faq-item[open] summary::after {
+      content: "−";
+    }
+
+    .faq-item summary:hover {
+      background: var(--color-bg);
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem 1.25rem;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--color-text-secondary);
+    }
+
+    /* 用户评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .comment-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      padding: 1.1rem 1.35rem;
+      box-shadow: var(--shadow-default);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .comment-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .comment-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--color-primary-light);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .comment-nickname {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--color-text-primary);
+    }
+
+    .comment-text {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: var(--color-text-secondary);
+    }
+
+    .comment-text em {
+      font-style: normal;
+      color: var(--color-accent);
+    }
+
+    /* 相关资讯 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .news-item {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      padding: 1.1rem 1.5rem;
+      box-shadow: var(--shadow-default);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.4rem 1rem;
+      align-items: baseline;
+      transition: box-shadow 0.2s;
+    }
+
+    .news-item:hover {
+      box-shadow: var(--shadow-hover);
+    }
+
+    .news-date {
+      font-size: 0.78rem;
+      color: var(--color-text-tertiary);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .news-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--color-text-primary);
+    }
+
+    .news-summary {
+      grid-column: 2;
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    /* 相关推荐标签 */
+    .tag-index {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .tag-index a {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-tag);
+      padding: 0.35rem 1rem;
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .tag-index a:hover {
+      background: var(--color-primary-light);
+      border-color: var(--color-primary-light);
+      color: #fff;
+    }
+
+    /* 补充板块：榜单 */
+    .rank-list {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-default);
+      overflow: hidden;
+    }
+
+    .rank-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 1.5rem;
+      border-bottom: 1px solid var(--color-border-light);
+    }
+
+    .rank-item:last-child {
+      border-bottom: none;
+    }
+
+    .rank-num {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--color-text-tertiary);
+      width: 1.5rem;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .rank-item:nth-child(1) .rank-num { color: #d97c2c; }
+    .rank-item:nth-child(2) .rank-num { color: #b0b0b0; }
+    .rank-item:nth-child(3) .rank-num { color: #b87d4b; }
+
+    .rank-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .rank-stat {
+      font-size: 0.78rem;
+      color: var(--color-text-tertiary);
+      white-space: nowrap;
+    }
+
+    /* 右侧辅助栏 */
+    .secondary-sidebar {
+      position: sticky;
+      top: var(--sticky-offset);
+      padding-top: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      max-height: calc(100vh - var(--sticky-offset));
+      overflow-y: auto;
+      scrollbar-width: thin;
+    }
+
+    .sidebar-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      padding: 1.25rem 1.35rem;
+      box-shadow: var(--shadow-default);
+    }
+
+    .sidebar-card h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--color-border-light);
+    }
+
+    .hot-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .hot-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+    }
+
+    .hot-list li .num {
+      color: var(--color-accent);
+      font-weight: 700;
+      font-size: 0.78rem;
+      min-width: 1.2rem;
+    }
+
+    .hot-list li a {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+
+    .hot-list li a:hover {
+      color: var(--color-primary);
+    }
+
+    .stats-mini {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--color-text-tertiary);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--color-border-light);
+    }
+
+    .stats-mini:last-child {
+      border-bottom: none;
+    }
+
+    .stats-mini strong {
+      color: var(--color-text-primary);
+      font-weight: 600;
+    }
+
+    /* 页尾 */
+    .footer {
+      background: var(--color-primary-dark);
+      color: rgba(255,255,255,0.85);
+      padding: 3rem 1.5rem 2rem;
+      margin-top: 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 2fr;
+      gap: 3rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-brand .brand-text {
+      color: #fff;
+      font-size: 1.3rem;
+    }
+
+    .footer-desc {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.65);
+      max-width: 300px;
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .footer-col h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.6);
+      padding: 0.2rem 0;
+      transition: color 0.15s;
+    }
+
+    .footer-col a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      max-width: 1440px;
+      margin: 2rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* 回到顶部 */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-hover);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 90;
+      transform: translateY(10px);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: var(--color-primary-dark);
+    }
+
+    /* 搜索浮层 */
+    .search-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 200;
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 15vh;
+    }
+
+    .search-overlay.open {
+      display: flex;
+    }
+
+    .search-box {
+      background: var(--color-surface);
+      border-radius: var(--radius-card);
+      width: 90%;
+      max-width: 560px;
+      padding: 1.5rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 0.8rem 1.2rem;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-button);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-box input:focus {
+      border-color: var(--color-primary);
+    }
+
+    .search-results {
+      margin-top: 1rem;
+      max-height: 40vh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .search-results .result-item {
+      padding: 0.6rem 0.9rem;
+      border-radius: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      transition: background 0.15s;
+    }
+
+    .search-results .result-item:hover {
+      background: var(--color-border-light);
+    }
+
+    .search-results .no-result {
+      padding: 1rem;
+      text-align: center;
+      color: var(--color-text-tertiary);
+      font-size: 0.9rem;
+    }
+
+    .search-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      color: var(--color-text-tertiary);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .page-container {
+        grid-template-columns: 1fr 260px;
+      }
+
+      .channel-sidebar {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-content {
+        max-width: 100%;
+      }
+
+      .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .hero-visual svg {
+        max-width: 280px;
+      }
+
+      .main-nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .footer-links {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 740px) {
+      .page-container {
+        grid-template-columns: 1fr;
+      }
+
+      .secondary-sidebar {
+        position: static;
+        max-height: none;
+        overflow: visible;
+      }
+
+      .comment-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .guide-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-links {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .announce-inner {
+        gap: 1rem;
+      }
+
+      .hero {
+        padding: 1.5rem 1rem 2rem;
+      }
+
+      .section-header h2 {
+        font-size: 1.25rem;
+      }
+
+      .deep-dive {
+        padding: 1.5rem 1.25rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .update-item {
+        flex-wrap: wrap;
+        gap: 0.3rem;
+      }
+
+      .update-summary {
+        white-space: normal;
+        flex-basis: 100%;
+      }
+
+      .news-item {
+        grid-template-columns: 1fr;
+      }
+
+      .news-summary {
+        grid-column: 1;
+      }
+    }
+
+    /* 移动端菜单 */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 150;
+      display: none;
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-menu-panel {
+      background: var(--color-surface);
+      width: 280px;
+      max-width: 80vw;
+      height: 100%;
+      padding: 2rem 1.5rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .mobile-menu-panel a {
+      padding: 0.7rem 0.75rem;
+      border-radius: 0.6rem;
+      font-size: 0.95rem;
+      color: var(--color-text-secondary);
+      transition: background 0.15s;
+    }
+
+    .mobile-menu-panel a:hover {
+      background: var(--color-border-light);
+    }
+
+    .mobile-close {
+      align-self: flex-end;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--color-text-tertiary);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 + 页头 -->
+  <div class="sticky-wrapper">
+    <div class="announce-bar">
+      <div class="announce-inner">
+        <span class="announce-brand">瓜老师笔记</span>
+        <span class="announce-item">
+          <span class="date">11月7日</span>
+          <span>《考研数学真题全解·2026版》更新</span>
+        </span>
+        <span class="announce-item">
+          <span class="badge">新增</span>
+          <span>英语六级翻译高频词表（12页）</span>
+        </span>
+        <span class="announce-item">
+          <span class="date">11月6日</span>
+          <span>政治冲刺押题卷三已上传</span>
+        </span>
+        <span class="announce-item">
+          <span class="badge">2.4万</span>
+          <span>本周笔记下载量</span>
+        </span>
+      </div>
+    </div>
+    <header class="header">
+      <div class="brand-area">
+        <div class="brand-logo">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="6" width="32" height="24" rx="4" fill="#2f6b4f"/>
+            <rect x="6" y="10" width="10" height="2" rx="1" fill="#fff" opacity="0.9"/>
+            <rect x="6" y="15" width="16" height="2" rx="1" fill="#fff" opacity="0.6"/>
+            <rect x="6" y="20" width="13" height="2" rx="1" fill="#fff" opacity="0.6"/>
+            <circle cx="27" cy="22" r="5" fill="#d97c2c"/>
+            <path d="M25 22l2 2 3-3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="brand-text">瓜老师笔记</span>
+      </div>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="/#jpkj">精品课件</a>
+        <a href="/#ztjl">真题解析</a>
+        <a href="/#beikao">备考攻略</a>
+        <a href="/#shenlun">申论范文</a>
+        <a href="/#bisai">竞赛资料</a>
+        <a href="/#shequ">交流社区</a>
+      </nav>
+      <div class="header-actions">
+        <button class="search-toggle" aria-label="搜索">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <button class="menu-toggle" aria-label="打开菜单">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </header>
+  </div>
+
+  <!-- 搜索浮层 -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+      <button class="search-close" aria-label="关闭搜索">&times;</button>
+      <input type="text" id="searchInput" placeholder="搜索笔记、真题、考点…" autocomplete="off">
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- 移动端菜单 -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-panel">
+      <button class="mobile-close" aria-label="关闭菜单">&times;</button>
+      <a href="/#jpkj">精品课件</a>
+      <a href="/#ztjl">真题解析</a>
+      <a href="/#beikao">备考攻略</a>
+      <a href="/#shenlun">申论范文</a>
+      <a href="/#bisai">竞赛资料</a>
+      <a href="/#shequ">交流社区</a>
+    </div>
+  </div>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-badge">2026 备考季 · 持续更新</span>
+      <h1>瓜老师笔记</h1>
+      <p class="hero-desc">
+        汇聚考研数学、英语四六级、政治冲刺、考公申论等科目笔记与真题解析，按学科和题型整理高频考点、易错清单与复习路径，适合备考学生查找系统资料、对比不同版本笔记的侧重。
+      </p>
+      <div class="hero-actions">
+        <a href="/#jpkj" class="btn-primary">浏览全部笔记</a>
+        <a href="/#ztjl" class="btn-outline">真题解析入口</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="40" width="320" height="220" rx="16" fill="#ffffff" stroke="#e2e0d8" stroke-width="2"/>
+        <rect x="60" y="60" width="100" height="8" rx="4" fill="#2f6b4f" opacity="0.8"/>
+        <rect x="60" y="80" width="180" height="6" rx="3" fill="#e2e0d8"/>
+        <rect x="60" y="94" width="160" height="6" rx="3" fill="#e2e0d8"/>
+        <rect x="60" y="108" width="140" height="6" rx="3" fill="#e2e0d8"/>
+        <rect x="60" y="130" width="80" height="6" rx="3" fill="#d97c2c" opacity="0.7"/>
+        <rect x="60" y="146" width="200" height="6" rx="3" fill="#e2e0d8"/>
+        <rect x="60" y="160" width="170" height="6" rx="3" fill="#e2e0d8"/>
+        <rect x="60" y="180" width="220" height="40" rx="8" fill="#f7f6f1" stroke="#e2e0d8"/>
+        <circle cx="340" cy="260" r="36" fill="#2f6b4f" opacity="0.12"/>
+        <circle cx="340" cy="260" r="24" fill="#2f6b4f" opacity="0.2"/>
+        <path d="M328 260l8 8 16-16" stroke="#2f6b4f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="280" y="60" width="60" height="60" rx="12" fill="#d97c2c" opacity="0.15"/>
+        <text x="310" y="98" text-anchor="middle" font-size="18" font-weight="700" fill="#d97c2c">85</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 主内容区：三栏门户 -->
+  <div class="page-container">
+
+    <!-- 左侧频道索引 -->
+    <aside class="channel-sidebar">
+      <h2>频道索引</h2>
+      <nav class="channel-list" aria-label="频道索引">
+        <a href="/#jpkj" class="active">精品课件</a>
+        <a href="/#ztjl">真题解析</a>
+        <a href="/#beikao">备考攻略</a>
+        <a href="/#shenlun">申论范文</a>
+        <a href="/#bisai">竞赛资料</a>
+        <a href="/#shequ">交流社区</a>
+        <a href="/#shuxue">考研数学</a>
+        <a href="/#yingyu">英语四六级</a>
+        <a href="/#zhengzhi">政治冲刺</a>
+        <a href="/#gongkao">公考行测</a>
+        <a href="/#fudao">复试指导</a>
+        <a href="/#ziliao">资料下载</a>
+      </nav>
+    </aside>
+
+    <!-- 中部主内容 -->
+    <main class="main-content">
+
+      <!-- 板块1：主题领域概览 -->
+      <section class="section" id="gaishu">
+        <div class="section-header">
+          <h2>备考笔记领域概览</h2>
+        </div>
+        <div class="overview-text">
+          <p>
+            “瓜老师笔记”这个方向覆盖的内容，大致可以从科目和用途两个维度来分。科目上，考研数学、英语四六级、政治冲刺、公考申论和行测是出现频率最高的几类；用途上，又分为知识点梳理型、真题逐题解析型、易错题清单型和背诵速记型。每一类笔记的整理逻辑完全不同——知识点梳理讲究框架完整，真题解析讲究步骤还原，易错清单讲究错误归因。
+          </p>
+          <p>
+            2026 年 11 月这波更新里，比较值得关注的是数学真题的“步骤分标注”做法：每道大题不仅给答案，还标出阅卷时哪几步给分、哪几步容易跳步丢分。英语方面，六级翻译的词表开始按“中国文化”“社会经济”“科技教育”三个话题分类，比按字母排序更贴近考试出题逻辑。政治冲刺的押题卷今年多了“时政对应表”，把每个考点和 2026 年 1 月至 10 月的具体事件挂钩，方便背完原理直接联想材料。
+          </p>
+          <p>
+            从使用场景看，9 月到 12 月是笔记类内容检索的高峰期，其中 11 月上旬集中在“模拟卷复盘”“错题二刷”“押题卷对比”三个需求上。笔记版本之间的差异主要看更新日期和标注方式，而不是页数多少。
+          </p>
+        </div>
+      </section>
+
+      <!-- 板块2：精选内容推荐 -->
+      <section class="section" id="jpkj">
+        <div class="section-header">
+          <h2>精品笔记推荐</h2>
+          <a href="/#jpkj" class="more-link">全部笔记 →</a>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <img src="https://picsum.photos/seed/mathnote01/400/300" width="400" height="300" loading="lazy" alt="考研数学真题步骤分标注笔记封面">
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag tag-primary">考研数学</span>
+                <span class="tag">真题解析</span>
+                <span class="tag">步骤分</span>
+              </div>
+              <h3 class="card-title">考研数学真题全解·2026版（步骤分标注）</h3>
+              <p class="card-desc">每道大题按阅卷标准拆出得分点，标出“写出公式得2分”“代入正确得3分”的层级，跳步丢分点用红框标出。适合二刷时对照自查。</p>
+              <div class="card-meta">
+                <span>更新于 11月7日</span>
+                <span class="heat">热度 9.8k</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://picsum.photos/seed/englishnote02/400/300" width="400" height="300" loading="lazy" alt="英语六级翻译高频词表按话题分类">
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag tag-primary">英语六级</span>
+                <span class="tag">翻译词表</span>
+                <span class="tag">话题分类</span>
+              </div>
+              <h3 class="card-title">英语六级翻译高频词表·话题分类版</h3>
+              <p class="card-desc">12 页词表按“中国文化”“社会经济”“科技教育”三个话题归类，每个词配一个六级真题例句，重点标注近三年重复出现的 47 个表达。</p>
+              <div class="card-meta">
+                <span>更新于 11月7日</span>
+                <span class="heat">热度 7.2k</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://picsum.photos/seed/politics03/400/300" width="400" height="300" loading="lazy" alt="政治冲刺押题卷三时政对应表">
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag tag-primary">政治冲刺</span>
+                <span class="tag">押题卷</span>
+                <span class="tag">时政</span>
+              </div>
+              <h3 class="card-title">政治冲刺押题卷三·时政对应表</h3>
+              <p class="card-desc">每个分析题考点后面直接挂对应时政事件和日期，比如“新发展格局”对应 2026 年 7 月某次会议表述，背原理的同时记住材料来源。</p>
+              <div class="card-meta">
+                <span>更新于 11月6日</span>
+                <span class="heat">热度 8.5k</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://picsum.photos/seed/shenlun04/400/300" width="400" height="300" loading="lazy" alt="申论范文乡村振兴类批注版">
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag tag-primary">申论</span>
+                <span class="tag">范文批注</span>
+                <span class="tag">乡村振兴</span>
+              </div>
+              <h3 class="card-title">申论范文批注版·乡村振兴专题</h3>
+              <p class="card-desc">8 篇范文逐段批注，标出“这段是问题分析”“这句是过渡句”“此处用数据支撑”，旁边附同主题考生常见写法对比，看出差距在哪。</p>
+              <div class="card-meta">
+                <span>更新于 11月5日</span>
+                <span class="heat">热度 6.1k</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://picsum.photos/seed/listening05/400/300" width="400" height="300" loading="lazy" alt="英语四级听力场景词笔记">
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag tag-primary">英语四级</span>
+                <span class="tag">听力</span>
+                <span class="tag">场景词</span>
+              </div>
+              <h3 class="card-title">四级听力场景词·按对话类型整理</h3>
+              <p class="card-desc">把 2023—2026 年四级听力真题里的高频场景词按“校园服务”“求职面试”“旅行交通”等六类拆开，每个场景配 2 道真题原句。</p>
+              <div class="card-meta">
+                <span>更新于 11月4日</span>
+                <span class="heat">热度 5.7k</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://picsum.photos/seed/xingce06/400/300" width="400" height="300" loading="lazy" alt="公考行测资料分析速算口诀">
+            <div class="card-body">
+              <div class="card-tags">
+                <span class="tag tag-primary">公考行测</span>
+                <span class="tag">资料分析</span>
+                <span class="tag">速算</span>
+              </div>
+              <h3 class="card-title">行测资料分析·速算口诀与陷阱清单</h3>
+              <p class="card-desc">增长率比较、比重变化、平均数增长率三类题型的速算步骤拆成口诀，后面附 15 个真题易错点，每个错点配一道原题演示。</p>
+              <div class="card-meta">
+                <span>更新于 11月3日</span>
+                <span class="heat">热度 5.2k</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 板块3：最新更新 -->
+      <section class="section" id="ztjl">
+        <div class="section-header">
+          <h2>真题解析与资料更新</h2>
+          <a href="/#ztjl" class="more-link">查看全部 →</a>
+        </div>
+        <div class="update-list">
+          <div class="update-item">
+            <span class="update-date">11月7日</span>
+            <span class="update-title">考研数学真题全解·2026版</span>
+            <span class="update-summary">新增 2026 年数一第 19 题步骤分拆解，标出“辅助线画法”两步得分点</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11月7日</span>
+            <span class="update-title">英语六级翻译词表</span>
+            <span class="update-summary">“科技教育”话题新增 12 个表达，含“人工智能赋能教育”的三种译法对比</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11月6日</span>
+            <span class="update-title">政治冲刺押题卷三</span>
+            <span class="update-summary">时政对应表补入 10 月 28 日某会议表述，分析题第 34 题答案同步修订</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11月5日</span>
+            <span class="update-title">申论范文批注·乡村振兴专题</span>
+            <span class="update-summary">新增“产业振兴”类范文 2 篇，批注侧重过渡句与数据引用位置</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11月4日</span>
+            <span class="update-title">四级听力场景词</span>
+            <span class="update-summary">补充 2026 年 6 月真题“校园服务”场景 6 个词，替换 2022 年旧词条</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11月3日</span>
+            <span class="update-title">行测资料分析速算口诀</span>
+            <span class="update-summary">“平均数增长率”口诀修订，原第 3 步公式符号笔误已更正</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11月2日</span>
+            <span class="update-title">考研数学错题清单·高数部分</span>
+            <span class="update-summary">新增“级数敛散性判断”错题 8 道，每题附错误选项归因</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11月1日</span>
+            <span class="update-title">政治选择题易混考点对照表</span>
+            <span class="update-summary">“主要矛盾”与“基本矛盾”两组表述的区分，附 6 道真题例句</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 板块4：分类入口 -->
+      <section class="section" id="beikao">
+        <div class="section-header">
+          <h2>按科目与题型分类</h2>
+        </div>
+        <div class="category-cloud">
+          <a href="/#shuxue" class="category-item">考研数学 <span class="count">86</span></a>
+          <a href="/#yingyu" class="category-item">英语四六级 <span class="count">72</span></a>
+          <a href="/#zhengzhi" class="category-item">政治冲刺 <span class="count">54</span></a>
+          <a href="/#shenlun" class="category-item">申论范文 <span class="count">43</span></a>
+          <a href="/#gongkao" class="category-item">公考行测 <span class="count">38</span></a>
+          <a href="/#fudao" class="category-item">复试指导 <span class="count">29</span></a>
+          <a href="/#bisai" class="category-item">竞赛资料 <span class="count">21</span></a>
+          <a href="/#ziliao" class="category-item">背诵速记 <span class="count">67</span></a>
+        </div>
+      </section>
+
+      <!-- 板块5：深度解析正文 -->
+      <section class="section" id="shendu">
+        <div class="deep-dive">
+          <h2>笔记版本差异与选择判断</h2>
+
+          <h3>真题解析笔记的“步骤分标注”到底有没有用</h3>
+          <p>
+            2026 年考研数学大纲没有大改，但阅卷标准在细节上更强调“关键步骤的呈现”。以数一第 19 题为例，标准答案写辅助线、列方程、求解三步，实际阅卷中“辅助线画法”单独占 2 分。瓜老师笔记 11 月 7 日更新的版本把这个得分点拆了出来，而市面上多数真题解析只给完整解答，不标步骤分。
+          </p>
+          <p>
+            判断一份步骤分标注笔记是否可靠，可以核对三个地方：<strong>得分点是否对应官方评分细则</strong>（细则通常在考后 1—2 个月由各省考试院发布片段）、<strong>跳步丢分说明是否配有具体题号</strong>、<strong>更新日期是否在 2026 年 9 月之后</strong>。三条缺一条，这份笔记的参考价值就要打折扣。
+          </p>
+          <div class="callout">
+            具体案例：某份 10 月流传的“数二步骤分笔记”把“写出拉格朗日中值定理公式”标为 3 分，但对照 2026 年评分细则片段，该步骤实际为 2 分。差异来自不同年份的给分习惯调整，笔记未标注年份。
+          </div>
+
+          <h3>翻译词表按话题分类和按字母排序的差别</h3>
+          <p>
+            英语六级翻译的出题逻辑是按话题组织段落，近三年真题中“中国文化”话题出现 4 次，“社会经济”3 次，“科技教育”2 次。按话题分类的词表，优势在于背词时能连带记住该话题的常用句式结构——比如“中国文化”话题下，“…是…的重要组成部分”这个句式反复出现，单独记单词很难触发这种关联。
+          </p>
+          <p>
+            按字母排序的词表适合查漏补缺，但不适合从零建立表达库。11 月 7 日更新的版本在“科技教育”话题下新增了“人工智能赋能教育”的三种译法对比，分别标注为“直译版”“意译版”“考试推荐版”，这种标注方式比单纯罗列单词更接近实际做题场景。
+          </p>
+
+          <h3>政治押题卷的“时政对应表”可信度分层</h3>
+          <p>
+            押题卷的时政对应表，信息层级需要分开看：<strong>已公开事实</strong>（会议名称、日期、官方表述）可以直接核对；<strong>命题人推测</strong>（某考点“大概率考”的标注）属于经验判断，没有官方依据；<strong>往年命中率</strong>（宣传语中的“去年命中 5 题”）需要区分“考点命中”和“原题命中”，多数宣传指的是前者。
+          </p>
+          <p>
+            判断一份时政对应表是否值得花时间，可以看它是否标出每个对应关系的来源。瓜老师笔记 11 月 6 日更新的押题卷三，在每个考点后面用灰色小字标注了事件日期和文件名称，比如“新发展格局”对应“2026 年 7 月中央财经委员会会议表述”。这种标注让使用者能自己复核，而不是只能全盘接受。
+          </p>
+        </div>
+      </section>
+
+      <!-- 板块6：体验指南 -->
+      <section class="section" id="ziliao">
+        <div class="section-header">
+          <h2>内容消费路径与判断依据</h2>
+        </div>
+        <div class="guide-grid">
+          <div class="guide-card">
+            <h3><span class="step-num">1</span>先看更新日期和标注方式</h3>
+            <p>同一科目的笔记可能同时存在好几个版本，优先选 2026 年 9 月之后更新的。标注方式比页数更说明问题——步骤分标注、话题分类、时政对应这类结构化处理，通常比纯知识点罗列更费工夫，也更接近考试实际。</p>
+          </div>
+          <div class="guide-card">
+            <h3><span class="step-num">2</span>对照真题验证一小节</h3>
+            <p>拿到一份真题解析笔记，先找一道自己熟悉的题，看它的解题步骤和得分点标注是否与自己的理解一致。如果一道题就有两处以上明显偏差，整份笔记的参考权重需要降低。这个验证过程大概花 10 分钟。</p>
+          </div>
+          <div class="guide-card">
+            <h3><span class="step-num">3</span>比较同主题笔记的覆盖差异</h3>
+            <p>两份“政治冲刺押题”笔记，一份侧重选择题易混点，一份侧重分析题时政对应，覆盖的题型不同，不能简单说谁更好。先明确自己当前缺的是选择题正确率还是分析题答题框架，再决定用哪一份。</p>
+          </div>
+          <div class="guide-card">
+            <h3><span class="step-num">4</span>错题清单优先于新知识点</h3>
+            <p>11 月上旬这个时间点，二刷错题的收益通常高于继续铺新内容。选错题清单类笔记时，看它是否给每道错题标注了错误归因——是概念混淆、计算失误还是审题偏差，标注越细，二刷时越容易定位问题。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 板块7：FAQ -->
+      <section class="section" id="faq">
+        <div class="section-header">
+          <h2>备考笔记常见问题</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>考研数学步骤分标注笔记和普通真题解析有什么区别？</summary>
+            <div class="faq-answer">
+              普通真题解析给的是完整解答过程，步骤分标注笔记额外标出每个关键步骤对应的分值，以及哪些步骤跳过后会丢分。区别在用途上：前者适合第一遍理解解法，后者适合二刷时对照自查。2026 年数一第 19 题中，“辅助线画法”单独占 2 分，普通解析通常不会单独标出。
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>英语六级翻译按话题背词表，考试时怎么用？</summary>
+            <div class="faq-answer">
+              翻译题给出一段中文，先判断它属于“中国文化”“社会经济”还是“科技教育”话题，再调用该话题下的常用句式和词汇。比如遇到传统文化类段落，“…是…的重要组成部分”这个句式几乎每次都能用上。话题词表的作用是缩短从“看到中文”到“想到英文表达”的路径。
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>政治押题卷的时政对应表里，“大概率考”的标注可信吗？</summary>
+            <div class="faq-answer">
+              这类标注属于命题人经验判断，没有官方依据，可信度取决于标注是否附带来源。如果只写“此考点重要”而不给出对应的事件日期和文件名称，参考价值有限。有来源标注的对应关系，至少可以自己复核事件本身是否真实存在，再判断它与考点的关联是否成立。
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>申论范文批注版和普通范文有什么区别？</summary>
+            <div class="faq-answer">
+              普通范文只呈现成文结果，批注版在每段旁边标出“这段承担什么功能”——问题分析、原因过渡、对策展开，并附同主题考生常见写法对比。批注版的价值在于让你看到范文的段落组织逻辑，而不只是模仿句子。对比项通常包括开头方式、数据引用位置和结尾收束角度。
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>行测资料分析速算口诀，记口诀和练真题哪个优先？</summary>
+            <div class="faq-answer">
+              口诀解决的是计算速度，真题练的是题型识别。11 月这个阶段，如果平时做资料分析超时 5 分钟以上，先花两天把口诀练熟；如果时间够但正确率低，优先刷真题并整理错题归因。两者不冲突，但顺序错了效率会低。口诀本身要配合真题原句验证，否则容易记混适用条件。
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>同一科目有好几份笔记，怎么判断哪份更适合二刷？</summary>
+            <div class="faq-answer">
+              先看更新日期是否在 2026 年 9 月之后，再看标注是否具体到题号和得分点。二刷阶段最需要的是能定位到具体错误类型的内容，而不是知识点覆盖最全的那份。一份只列知识点但标注了“近三年高频错题 12 道”的笔记，二刷时的实用性可能高于一份 200 页的完整讲义。
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 板块8：用户评论 -->
+      <section class="section" id="shequ">
+        <div class="section-header">
+          <h2>备考者说</h2>
+        </div>
+        <div class="comment-grid">
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">李</span>
+              <span class="comment-nickname">李同学</span>
+            </div>
+            <p class="comment-text">数一第19题步骤分那个标注挺细的，我之前做真题从来不管步骤分，对了答案就翻篇。这次对着标出来的得分点看，发现自己辅助线那步经常跳，难怪模拟考总差几分。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">王</span>
+              <span class="comment-nickname">王不留行</span>
+            </div>
+            <p class="comment-text">六级翻译词表按话题分类确实比字母顺序好用，但“科技教育”话题下有些表达偏难了，考试根本用不上。<em>人工智能赋能教育那三种译法</em>，第一种直译版我觉得最稳妥。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">陈</span>
+              <span class="comment-nickname">陈默是金</span>
+            </div>
+            <p class="comment-text">政治押题卷三的时政对应表标注了来源日期，这点比别家强。之前买过一份押题，考点后面就写“重点关注”，连哪次会议都不说，背了也不知道往哪套。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">赵</span>
+              <span class="comment-nickname">赵赵赵</span>
+            </div>
+            <p class="comment-text">申论范文批注的过渡句标注太有用了，我一直知道自己写得不自然，但不知道问题出在哪。看了批注才发现是段与段之间缺了“承上”那一句，直接跳到对策。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">刘</span>
+              <span class="comment-nickname">刘大锤</span>
+            </div>
+            <p class="comment-text">行测速算口诀修订了符号笔误，之前那个版本我算了半天觉得不对，还以为自己记错了。这种修订应该早点标出来，差点就按错的背了。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">周</span>
+              <span class="comment-nickname">周小舟</span>
+            </div>
+            <p class="comment-text">四级听力场景词更新了校园服务那部分，2026年6月真题里的“course registration”和“tuition payment”都收进去了。不过我觉得求职面试那类还可以再补几个。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">吴</span>
+              <span class="comment-nickname">吴一一</span>
+            </div>
+            <p class="comment-text">政治选择题易混考点那个对照表，主要矛盾和基本矛盾终于分清楚了。之前一直混着用，做选择题错了好几次，现在看到题目能反应过来了。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">郑</span>
+              <span class="comment-nickname">郑在学</span>
+            </div>
+            <p class="comment-text">错题清单的高数部分，级数敛散性那8道题错误归因写得不错，有道题我选对了但其实是蒙的，看了归因才发现自己思路不对。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">孙</span>
+              <span class="comment-nickname">孙不二</span>
+            </div>
+            <p class="comment-text">怎么说呢，资料挺全的，就是每次找某个具体科目的最新版要点好几个地方。希望以后能把更新日期统一标在每个条目前面。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">林</span>
+              <span class="comment-nickname">林深见鹿</span>
+            </div>
+            <p class="comment-text">数二那个步骤分笔记把拉格朗日公式标成3分，对照评分细则其实是2分。这种细节差异不大，但说明标注还是要以官方细则为准，不能全信。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">何</span>
+              <span class="comment-nickname">何处不芳草</span>
+            </div>
+            <p class="comment-text">最近在准备复试，希望复试指导那边能多更新一些英语口语常问问题的回答模板。现在的内容偏少，翻来覆去就那几篇。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-header">
+              <span class="comment-avatar">许</span>
+              <span class="comment-nickname">许愿上岸</span>
+            </div>
+            <p class="comment-text">押题卷的命中率宣传看看就好，去年说命中5题，实际是考点命中，原题一道没有。不过时政对应表本身做得还是用心的，这个得认。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 板块9：相关资讯 -->
+      <section class="section" id="zixun">
+        <div class="section-header">
+          <h2>考试与资料动态</h2>
+        </div>
+        <div class="news-list">
+          <article class="news-item">
+            <span class="news-date">11月7日</span>
+            <h3 class="news-title">2026年考研数学大纲解析：数一数二数三考点分布变化</h3>
+            <p class="news-summary">数一概率论部分增加“随机变量函数的分布”考查权重，数二高数“反常积分收敛性”从了解提升为掌握，数三无实质变动。</p>
+          </article>
+          <article class="news-item">
+            <span class="news-date">11月6日</span>
+            <h3 class="news-title">英语四六级口试报名11月10日截止，机考考点新增12个</h3>
+            <p class="news-summary">本次口试报名截止到11月10日17时，全国机考考点从去年同期的 186 个增至 198 个，新增考点集中在二线城市高校。</p>
+          </article>
+          <article class="news-item">
+            <span class="news-date">11月5日</span>
+            <h3 class="news-title">多省公务员考试公告陆续发布，行测资料分析题量维持20题</h3>
+            <p class="news-summary">江苏、浙江、上海三地公告显示，行测总题量130题，资料分析模块仍为20题，考试时间定于12月20日。</p>
+          </article>
+          <article class="news-item">
+            <span class="news-date">11月4日</span>
+            <h3 class="news-title">考研报名网上确认结束，部分报考点公布考场安排</h3>
+            <p class="news-summary">北京、成都等报考点已发布考场分布图，考生可于11月20日起登录研招网下载准考证，部分考点要求提前一小时到场。</p>
+          </article>
+          <article class="news-item">
+            <span class="news-date">11月2日</span>
+            <h3 class="news-title">2026年国考申论新增“行政执法类”试卷，题量保持5题</h3>
+            <p class="news-summary">行政执法类试卷在材料主题上侧重基层执法与公共服务，最后一题仍为文章写作，字数要求1000—1200字。</p>
+          </article>
+          <article class="news-item">
+            <span class="news-date">10月30日</span>
+            <h3 class="news-title">部分高校发布考研复试参考书目调整通知，涉及计算机、教育学等专业</h3>
+            <p class="news-summary">某211高校计算机专业复试笔试科目由“数据结构”改为“数据结构+操作系统综合”，参考书目新增两本，2026年3月复试生效。</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 板块10：相关推荐 -->
+      <section class="section" id="tuijian">
+        <div class="section-header">
+          <h2>相关方向索引</h2>
+        </div>
+        <div class="tag-index">
+          <a href="/#shuxue">考研数学级数敛散性判断</a>
+          <a href="/#yingyu">六级翻译中国文化话题词</a>
+          <a href="/#zhengzhi">政治主要矛盾与基本矛盾区分</a>
+          <a href="/#shenlun">申论对策段落过渡句写法</a>
+          <a href="/#gongkao">行测资料分析平均数增长率</a>
+          <a href="/#fudao">复试英语口语常问问题</a>
+          <a href="/#ziliao">考研数学二刷错题归因</a>
+          <a href="/#bisai">大学生数学竞赛真题选讲</a>
+        </div>
+      </section>
+
+      <!-- 板块11：补充板块 - 热门榜单 -->
+      <section class="section" id="bangdan">
+        <div class="section-header">
+          <h2>本周笔记热度榜</h2>
+        </div>
+        <div class="rank-list">
+          <div class="rank-item">
+            <span class="rank-num">1</span>
+            <span class="rank-name">考研数学真题全解·2026版（步骤分标注）</span>
+            <span class="rank-stat">9.8k 热度</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">2</span>
+            <span class="rank-name">政治冲刺押题卷三·时政对应表</span>
+            <span class="rank-stat">8.5k 热度</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">3</span>
+            <span class="rank-name">英语六级翻译高频词表·话题分类版</span>
+            <span class="rank-stat">7.2k 热度</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">4</span>
+            <span class="rank-name">申论范文批注版·乡村振兴专题</span>
+            <span class="rank-stat">6.1k 热度</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">5</span>
+            <span class="rank-name">四级听力场景词·按对话类型整理</span>
+            <span class="rank-stat">5.7k 热度</span>
+          </div>
+          <div class="rank-item">
+            <span class="rank-num">6</span>
+            <span class="rank-name">行测资料分析·速算口诀与陷阱清单</span>
+            <span class="rank-stat">5.2k 热度</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右侧辅助栏 -->
+    <aside class="secondary-sidebar">
+      <div class="sidebar-card">
+        <h3>今日热门条目</h3>
+        <ol class="hot-list">
+          <li><span class="num">1</span><a href="/#shuxue">数一第19题步骤分拆解</a></li>
+          <li><span class="num">2</span><a href="/#zhengzhi">押题卷三时政对应表</a></li>
+          <li><span class="num">3</span><a href="/#yingyu">六级翻译“科技教育”词表</a></li>
+          <li><span class="num">4</span><a href="/#shenlun">乡村振兴范文批注</a></li>
+          <li><span class="num">5</span><a href="/#gongkao">资料分析速算口诀修订</a></li>
+        </ol>
+      </div>
+      <div class="sidebar-card">
+        <h3>资料规模</h3>
+        <div class="stats-mini"><span>笔记条目</span><strong>386</strong></div>
+        <div class="stats-mini"><span>真题解析</span><strong>124</strong></div>
+        <div class="stats-mini"><span>本周更新</span><strong>18</strong></div>
+        <div class="stats-mini"><span>覆盖科目</span><strong>9</strong></div>
+      </div>
+      <div class="sidebar-card">
+        <h3>投稿与交流</h3>
+        <p style="font-size:0.85rem;line-height:1.7;color:var(--color-text-secondary);margin-bottom:0.75rem;">有自己整理的笔记？欢迎上传分享，经审核后收录到对应科目频道。</p>
+        <a href="/#shequ" class="btn-primary" style="width:100%;justify-content:center;padding:0.55rem 1rem;font-size:0.85rem;">上传笔记</a>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- 页尾 -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-text">瓜老师笔记</span>
+        <p class="footer-desc">
+          覆盖 2023—2026 年考研、四六级、公考等科目笔记与真题解析，内容类型含知识点梳理、步骤分标注、话题词表、错题归因和时政对应，每周三、周日集中更新。
+        </p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>科目频道</h4>
+          <a href="/#shuxue">考研数学</a>
+          <a href="/#yingyu">英语四六级</a>
+          <a href="/#zhengzhi">政治冲刺</a>
+          <a href="/#shenlun">申论范文</a>
+          <a href="/#gongkao">公考行测</a>
+        </div>
+        <div class="footer-col">
+          <h4>内容类型</h4>
+          <a href="/#ztjl">真题解析</a>
+          <a href="/#ziliao">背诵速记</a>
+          <a href="/#beikao">备考攻略</a>
+          <a href="/#bisai">竞赛资料</a>
+          <a href="/#fudao">复试指导</a>
+        </div>
+        <div class="footer-col">
+          <h4>互动与说明</h4>
+          <a href="/#shequ">交流社区</a>
+          <a href="/#shequ">投稿上传</a>
+          <a href="/#bangdan">热度榜单</a>
+          <a href="/#zixun">考试动态</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 瓜老师笔记 · 内容聚合示例站</span>
+      <span>资料更新至 2026 年 11 月 8 日</span>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "瓜老师笔记",
+    "description": "汇聚考研数学、英语四六级、政治冲刺等科目笔记与真题解析，按学科和题型整理高频考点。",
+    "inLanguage": "zh-CN"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "考研数学步骤分标注笔记和普通真题解析有什么区别？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "普通真题解析给的是完整解答过程，步骤分标注笔记额外标出每个关键步骤对应的分值，以及哪些步骤跳过后会丢分。区别在用途上：前者适合第一遍理解解法，后者适合二刷时对照自查。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "英语六级翻译按话题背词表，考试时怎么用？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "翻译题给出一段中文，先判断它属于哪类话题，再调用该话题下的常用句式和词汇。话题词表的作用是缩短从看到中文到想到英文表达的路径。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "政治押题卷的时政对应表里，“大概率考”的标注可信吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "这类标注属于命题人经验判断，没有官方依据，可信度取决于标注是否附带来源。有来源标注的对应关系，至少可以自己复核事件本身是否真实存在。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "申论范文批注版和普通范文有什么区别？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "普通范文只呈现成文结果，批注版在每段旁边标出这段承担什么功能，并附同主题考生常见写法对比。批注版的价值在于让你看到段落组织逻辑，而不只是模仿句子。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "行测资料分析速算口诀，记口诀和练真题哪个优先？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "口诀解决的是计算速度，真题练的是题型识别。如果平时做资料分析超时5分钟以上，先花两天把口诀练熟；如果时间够但正确率低，优先刷真题并整理错题归因。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "同一科目有好几份笔记，怎么判断哪份更适合二刷？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "先看更新日期是否在2026年9月之后，再看标注是否具体到题号和得分点。二刷阶段最需要的是能定位到具体错误类型的内容，而不是知识点覆盖最全的那份。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- 交互脚本 -->
+  <script>
+    (function() {
+      // 回到顶部
+      var backBtn = document.getElementById('backToTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) {
+          backBtn.classList.add('visible');
+        } else {
+          backBtn.classList.remove('visible');
+        }
+      });
+      backBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 搜索
+      var searchToggle = document.querySelector('.search-toggle');
+      var searchOverlay = document.getElementById('searchOverlay');
+      var searchClose = document.querySelector('.search-close');
+      var searchInput = document.getElementById('searchInput');
+      var searchResults = document.getElementById('searchResults');
+
+      // 收集页面内可搜索文本
+      var searchableItems = [];
+      document.querySelectorAll('.card-title, .update-title, .news-title, .rank-name, .channel-list a, .category-item, .tag-index a, .faq-item summary').forEach(function(el) {
+        var text = el.textContent.trim();
+        if (text) {
+          searchableItems.push({ text: text, el: el });
+        }
+      });
+
+      searchToggle.addEventListener('click', function() {
+        searchOverlay.classList.add('open');
+        searchInput.focus();
+      });
+
+      searchClose.addEventListener('click', function() {
+        searchOverlay.classList.remove('open');
+        searchInput.value = '';
+        searchResults.innerHTML = '';
+      });
+
+      searchOverlay.addEventListener('click', function(e) {
+        if (e.target === searchOverlay) {
+          searchOverlay.classList.remove('open');
+        }
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && searchOverlay.classList.contains('open')) {
+          searchOverlay.classList.remove('open');
+        }
+      });
+
+      searchInput.addEventListener('input', function() {
+        var query = this.value.trim().toLowerCase();
+        searchResults.innerHTML = '';
+        if (!query) return;
+
+        var matched = searchableItems.filter(function(item) {
+          return item.text.toLowerCase().indexOf(query) !== -1;
+        }).slice(0, 10);
+
+        if (matched.length === 0) {
+          searchResults.innerHTML = '<div class="no-result">没有找到相关内容，换个关键词试试</div>';
+          return;
+        }
+
+        matched.forEach(function(item) {
+          var div = document.createElement('div');
+          div.className = 'result-item';
+          div.textContent = item.text;
+          div.addEventListener('click', function() {
+            searchOverlay.classList.remove('open');
+            item.el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          });
+          searchResults.appendChild(div);
+        });
+      });
+
+      // 移动端菜单
+      var menuToggle = document.querySelector('.menu-toggle');
+      var mobileMenu = document.getElementById('mobileMenu');
+      var mobileClose = document.querySelector('.mobile-close');
+
+      menuToggle.addEventListener('click', function() {
+        mobileMenu.classList.add('open');
+      });
+
+      mobileClose.addEventListener('click', function() {
+        mobileMenu.classList.remove('open');
+      });
+
+      mobileMenu.addEventListener('click', function(e) {
+        if (e.target === mobileMenu) {
+          mobileMenu.classList.remove('open');
+        }
+      });
+
+      mobileMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.remove('open');
+        });
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+          mobileMenu.classList.remove('open');
+        }
+      });
+
+      // 频道高亮（滚动监听）
+      var sections = document.querySelectorAll('section[id]');
+      var channelLinks = document.querySelectorAll('.channel-list a');
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var id = entry.target.getAttribute('id');
+            channelLinks.forEach(function(link) {
+              link.classList.toggle('active', link.getAttribute('href') === '/#' + id);
+            });
+          }
+        });
+      }, { rootMargin: '-40% 0px -55% 0px' });
+      sections.forEach(function(section) { observer.observe(section); });
+    })();
+  </script>
+</body>
+  </html>
