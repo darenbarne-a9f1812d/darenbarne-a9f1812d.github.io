@@ -1,0 +1,1238 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>五一黑料社每日大赛 - 每日爆料赛程与参赛作品聚合</title>
+<meta name="description" content="五一黑料社每日大赛聚合每日赛程、参赛作品、爆料条目与评审规则，含榜单、FAQ与参赛者评论，适合关注每日爆料选题与赛果的读者查阅。">
+<meta name="keywords" content="五一黑料社每日大赛">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316121f'/%3E%3Cpath d='M18 44 L32 16 L46 44 Z' fill='none' stroke='%23f2b544' stroke-width='4' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='36' r='4' fill='%23f2b544'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "五一黑料社每日大赛",
+  "description": "每日爆料赛程、参赛作品与评审规则聚合",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"每日大赛的选题评分看哪几项？","acceptedAnswer":{"@type":"Answer","text":"评审表拆成四项：线索来源可核验程度40分、时间线完整度25分、当事人回应是否收录20分、表述克制程度15分，四项相加为单条爆料的基础分，低于60分不进当日榜单。"}},
+    {"@type":"Question","name":"爆料条目里的“待核实”标签是什么意思？","acceptedAnswer":{"@type":"Answer","text":"待核实指该条目的关键节点只有单一来源，或缺当事人书面回应。这类条目会保留在赛程页但不计入当日前三，通常48小时内补证后改为“已核实”或直接撤稿。"}},
+    {"@type":"Question","name":"同一事件被多人投递，署名算谁的？","acceptedAnswer":{"@type":"Answer","text":"以首个提交完整时间线（含至少两个节点时间戳）的投递为准，后续补充材料的人列为“补充投递”，署名并列但排序在后，奖励按7:3分配。"}},
+    {"@type":"Question","name":"录音类素材怎么判断能不能用？","acceptedAnswer":{"@type":"Answer","text":"需要同时满足三点：录音时长超过90秒、有明确对话双方身份线索、能提供录制时间与场景说明。缺少场景说明的录音在评审中按“来源不明”扣20分。"}},
+    {"@type":"Question","name":"每日大赛和每周总榜是什么关系？","acceptedAnswer":{"@type":"Answer","text":"每日榜单前五自动进入当周总榜候选池，周榜再按传播反馈与后续补证情况重排。周榜第一名不一定来自单日第一，2026年10月下旬就出现过日榜第三最终拿下周冠的情况。"}},
+    {"@type":"Question","name":"投递后被判定不实会有什么处理？","acceptedAnswer":{"@type":"Answer","text":"首次判为不实的条目做撤稿并公示更正说明，账号进入14天观察期；同一账号两次判为不实，取消当季参赛资格，已发奖励追回。"}}
+  ]
+}
+</script>
+<style>
+:root{
+  --brand:#16121f;
+  --brand-2:#241d33;
+  --accent:#f2b544;
+  --accent-soft:#fbe6b8;
+  --accent-deep:#c8892a;
+  --bg:#f6f4ef;
+  --panel:#ffffff;
+  --panel-2:#efece4;
+  --text:#1d1a24;
+  --text-2:#4d4757;
+  --text-3:#7d7689;
+  --line:#e2ddd2;
+  --radius-card:14px;
+  --radius-btn:9px;
+  --radius-tag:6px;
+  --radius-banner:18px;
+  --shadow:0 1px 2px rgba(22,18,31,.06),0 4px 14px rgba(22,18,31,.05);
+  --shadow-hover:0 3px 8px rgba(22,18,31,.1),0 10px 26px rgba(22,18,31,.09);
+  --head-h:56px;
+  --bar-h:38px;
+  --offset:calc(var(--head-h) + var(--bar-h) + 12px);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:var(--offset);}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,sans-serif;
+  font-size:15px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700;}
+p{margin:0 0 .85em;}
+ul,ol{margin:0 0 .9em;padding-left:1.25em;}
+li{margin-bottom:.35em;}
+button{font-family:inherit;}
+
+/* ============ 吸顶公告条 ============ */
+.topbar{
+  position:sticky;top:0;z-index:60;
+  background:var(--brand);
+  color:#e9e3d6;
+  font-size:13px;
+  height:var(--bar-h);
+  display:flex;align-items:center;
+  border-bottom:1px solid rgba(242,181,68,.25);
+}
+.topbar-inner{
+  width:100%;max-width:1360px;margin:0 auto;padding:0 18px;
+  display:flex;align-items:center;gap:14px;overflow:hidden;
+}
+.topbar-brand{
+  flex:0 0 auto;color:var(--accent);font-weight:700;letter-spacing:.5px;
+  padding-right:14px;border-right:1px solid rgba(242,181,68,.3);
+}
+.topbar-scroll{
+  display:flex;gap:26px;white-space:nowrap;overflow:hidden;
+  animation:tick 34s linear infinite;
+}
+.topbar-scroll span b{color:var(--accent-soft);font-weight:600;}
+@keyframes tick{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+
+/* ============ 页头 ============ */
+.head{
+  position:sticky;top:var(--bar-h);z-index:55;
+  height:var(--head-h);
+  background:rgba(246,244,239,.88);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.head-inner{
+  max-width:1360px;margin:0 auto;padding:0 18px;height:100%;
+  display:flex;align-items:center;gap:22px;
+}
+.logo{display:flex;align-items:center;gap:9px;flex:0 0 auto;}
+.logo svg{width:30px;height:30px;flex:0 0 auto;}
+.logo-text{font-weight:800;font-size:16px;letter-spacing:.4px;color:var(--brand);white-space:nowrap;}
+.mainnav{display:flex;gap:4px;flex:1 1 auto;overflow-x:auto;scrollbar-width:none;}
+.mainnav::-webkit-scrollbar{display:none;}
+.mainnav a{
+  padding:6px 11px;border-radius:var(--radius-btn);font-size:14px;color:var(--text-2);
+  white-space:nowrap;transition:background .18s,color .18s;
+}
+.mainnav a:hover{background:var(--panel-2);color:var(--text);}
+.mainnav a.on{background:var(--brand);color:var(--accent-soft);}
+.head-side{display:flex;align-items:center;gap:10px;flex:0 0 auto;}
+.searchbox{position:relative;display:flex;align-items:center;}
+.searchbox input{
+  width:172px;height:34px;border:1px solid var(--line);border-radius:var(--radius-btn);
+  background:var(--panel);padding:0 10px 0 32px;font-size:13px;color:var(--text);
+  outline:none;transition:border-color .18s,box-shadow .18s;
+}
+.searchbox input:focus{border-color:var(--accent-deep);box-shadow:0 0 0 3px rgba(242,181,68,.22);}
+.searchbox svg{position:absolute;left:9px;width:15px;height:15px;stroke:var(--text-3);pointer-events:none;}
+.btn-ghost{
+  height:34px;padding:0 14px;border-radius:var(--radius-btn);border:1px solid var(--brand);
+  background:transparent;color:var(--brand);font-size:13px;font-weight:600;cursor:pointer;
+  transition:background .18s,color .18s;
+}
+.btn-ghost:hover{background:var(--brand);color:var(--accent-soft);}
+.burger{
+  display:none;width:36px;height:34px;border:1px solid var(--line);border-radius:var(--radius-btn);
+  background:var(--panel);cursor:pointer;align-items:center;justify-content:center;
+}
+.burger span{display:block;width:16px;height:2px;background:var(--brand);position:relative;}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:16px;height:2px;background:var(--brand);}
+.burger span::before{top:-5px;}
+.burger span::after{top:5px;}
+
+/* 移动抽屉 */
+.drawer-mask{
+  position:fixed;inset:0;background:rgba(22,18,31,.45);z-index:70;opacity:0;pointer-events:none;
+  transition:opacity .22s;
+}
+.drawer-mask.open{opacity:1;pointer-events:auto;}
+.drawer{
+  position:fixed;top:0;right:0;bottom:0;width:min(290px,84vw);background:var(--panel);z-index:71;
+  transform:translateX(100%);transition:transform .24s ease;padding:18px;overflow-y:auto;
+  box-shadow:-8px 0 30px rgba(22,18,31,.2);
+}
+.drawer.open{transform:translateX(0);}
+.drawer h3{font-size:14px;color:var(--text-3);margin:18px 0 8px;font-weight:600;}
+.drawer a{display:block;padding:9px 10px;border-radius:var(--radius-btn);font-size:14px;color:var(--text-2);}
+.drawer a:hover{background:var(--panel-2);color:var(--text);}
+.drawer-close{
+  position:absolute;top:12px;right:12px;width:32px;height:32px;border:none;border-radius:var(--radius-btn);
+  background:var(--panel-2);color:var(--text-2);font-size:17px;cursor:pointer;
+}
+
+/* ============ 首屏 ============ */
+.hero{
+  position:relative;overflow:hidden;
+  background:radial-gradient(1200px 460px at 78% -10%,rgba(242,181,68,.28),transparent 62%),
+             linear-gradient(160deg,#16121f 0%,#241d33 58%,#2f2742 100%);
+  color:#f4efe4;
+}
+.hero-grid{
+  max-width:1360px;margin:0 auto;padding:46px 18px 52px;
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:38px;align-items:center;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:7px;font-size:12.5px;letter-spacing:1px;
+  border:1px solid rgba(242,181,68,.45);color:var(--accent-soft);
+  padding:4px 11px;border-radius:100px;margin-bottom:16px;
+}
+.hero-tag i{width:6px;height:6px;border-radius:50%;background:var(--accent);display:block;animation:pulse 2.6s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+.hero h1{
+  font-size:clamp(30px,4.4vw,46px);letter-spacing:1px;color:#fff;
+  text-shadow:0 2px 18px rgba(0,0,0,.35);
+}
+.hero-lead{
+  margin-top:15px;font-size:15.5px;line-height:1.85;color:#d9d2c4;max-width:34em;
+}
+.hero-lead b{color:var(--accent-soft);font-weight:600;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:24px;}
+.btn-main{
+  display:inline-flex;align-items:center;gap:7px;height:42px;padding:0 20px;border-radius:var(--radius-btn);
+  background:var(--accent);color:#241d10;font-weight:700;font-size:14px;border:none;cursor:pointer;
+  transition:transform .18s,box-shadow .18s,background .18s;
+}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(242,181,68,.3);background:#f7c463;}
+.btn-line{
+  display:inline-flex;align-items:center;height:42px;padding:0 18px;border-radius:var(--radius-btn);
+  border:1px solid rgba(244,239,228,.35);color:#f4efe4;font-size:14px;transition:background .18s;
+}
+.btn-line:hover{background:rgba(244,239,228,.1);}
+.hero-stats{display:flex;gap:26px;margin-top:28px;flex-wrap:wrap;}
+.hero-stats div{font-size:12.5px;color:#a9a1b5;}
+.hero-stats strong{display:block;font-size:20px;color:var(--accent-soft);font-weight:800;letter-spacing:.5px;}
+
+/* 首屏视觉：赛程板 */
+.hero-visual{position:relative;}
+.board{
+  background:rgba(255,255,255,.055);border:1px solid rgba(242,181,68,.22);
+  border-radius:var(--radius-banner);padding:16px;backdrop-filter:blur(4px);
+}
+.board-head{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#a9a1b5;margin-bottom:12px;}
+.board-head b{color:var(--accent-soft);font-size:12.5px;letter-spacing:.6px;}
+.slot{
+  display:grid;grid-template-columns:52px 1fr auto;gap:10px;align-items:center;
+  padding:9px 10px;border-radius:10px;background:rgba(255,255,255,.05);margin-bottom:8px;
+  font-size:13px;
+}
+.slot time{color:var(--accent);font-weight:700;font-size:12.5px;letter-spacing:.4px;}
+.slot .name{color:#efe9dc;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.slot .tag{
+  font-size:11px;padding:2px 7px;border-radius:var(--radius-tag);
+  background:rgba(242,181,68,.16);color:var(--accent-soft);white-space:nowrap;
+}
+.slot.hot{background:rgba(242,181,68,.14);border:1px solid rgba(242,181,68,.4);}
+
+/* ============ 主体布局 ============ */
+.wrap{max-width:1360px;margin:0 auto;padding:0 18px;}
+.layout{
+  display:grid;grid-template-columns:206px minmax(0,1fr) 268px;gap:26px;
+  align-items:start;padding:32px 0 10px;
+}
+
+/* 左频道栏 */
+.side-left{position:sticky;top:var(--offset);}
+.side-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:14px;box-shadow:var(--shadow);margin-bottom:16px;
+}
+.side-card h3{font-size:12.5px;color:var(--text-3);letter-spacing:1px;margin-bottom:9px;font-weight:600;}
+.chan{display:flex;flex-direction:column;gap:2px;}
+.chan a{
+  display:flex;justify-content:space-between;align-items:center;gap:8px;
+  padding:7px 9px;border-radius:var(--radius-btn);font-size:13.5px;color:var(--text-2);
+  transition:background .16s,color .16s;
+}
+.chan a:hover{background:var(--panel-2);color:var(--text);}
+.chan a.cur{background:var(--brand);color:var(--accent-soft);font-weight:600;}
+.chan em{font-style:normal;font-size:11px;color:var(--text-3);}
+.chan a.cur em{color:rgba(251,230,184,.7);}
+
+/* 主列 */
+.maincol{min-width:0;}
+section.block{margin-bottom:44px;scroll-margin-top:var(--offset);}
+.block-head{margin-bottom:16px;}
+.block-head .kicker{font-size:12px;color:var(--accent-deep);letter-spacing:1.5px;font-weight:700;margin-bottom:4px;}
+.block-head h2{font-size:21px;letter-spacing:.3px;}
+.block-head p{font-size:13.5px;color:var(--text-3);margin-top:6px;margin-bottom:0;}
+
+/* 概览 */
+.overview{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:22px 24px;box-shadow:var(--shadow);
+}
+.overview p{font-size:15px;color:var(--text-2);line-height:1.9;}
+.overview p:last-child{margin-bottom:0;}
+.overview .hl{color:var(--text);font-weight:600;background:linear-gradient(transparent 62%,var(--accent-soft) 62%);}
+
+/* 精选卡片 */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(238px,1fr));gap:16px;}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;
+  transition:transform .2s,box-shadow .2s;min-width:0;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);}
+.card .thumb{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--panel-2);}
+.card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.card:hover .thumb img{transform:scale(1.045);}
+.card .badge{
+  position:absolute;left:9px;top:9px;font-size:11px;padding:2px 8px;border-radius:var(--radius-tag);
+  background:rgba(22,18,31,.78);color:var(--accent-soft);backdrop-filter:blur(3px);
+}
+.card-body{padding:13px 14px 14px;display:flex;flex-direction:column;gap:7px;flex:1 1 auto;}
+.card-body h3{font-size:15px;line-height:1.45;}
+.card-body .desc{font-size:13px;color:var(--text-2);line-height:1.72;flex:1 1 auto;}
+.tags{display:flex;flex-wrap:wrap;gap:5px;}
+.tags span{font-size:11.5px;color:var(--text-3);background:var(--panel-2);padding:1px 7px;border-radius:var(--radius-tag);}
+.card-meta{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--text-3);border-top:1px dashed var(--line);padding-top:8px;}
+.card-meta b{color:var(--accent-deep);font-weight:700;}
+
+/* 动态列表 */
+.feed{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);box-shadow:var(--shadow);overflow:hidden;}
+.feed li{
+  list-style:none;display:grid;grid-template-columns:78px 1fr;gap:14px;
+  padding:13px 18px;border-bottom:1px solid var(--line);margin:0;
+}
+.feed li:last-child{border-bottom:none;}
+.feed time{font-size:12.5px;color:var(--text-3);font-variant-numeric:tabular-nums;padding-top:2px;}
+.feed .t{font-size:14.5px;font-weight:600;margin-bottom:3px;}
+.feed .s{font-size:13px;color:var(--text-2);line-height:1.7;}
+.feed .s em{font-style:normal;color:var(--accent-deep);font-weight:600;}
+
+/* 分类筛选 */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:15px;}
+.filters button{
+  border:1px solid var(--line);background:var(--panel);color:var(--text-2);
+  padding:6px 13px;border-radius:100px;font-size:13px;cursor:pointer;
+  transition:all .16s;
+}
+.filters button:hover{border-color:var(--accent-deep);color:var(--text);}
+.filters button.on{background:var(--brand);border-color:var(--brand);color:var(--accent-soft);font-weight:600;}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;}
+.cat{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:14px 15px;box-shadow:var(--shadow);transition:border-color .18s,transform .18s;
+  display:block;
+}
+.cat:hover{border-color:var(--accent-deep);transform:translateY(-2px);}
+.cat h3{font-size:14.5px;margin-bottom:5px;}
+.cat p{font-size:12.5px;color:var(--text-3);margin:0;line-height:1.65;}
+.cat .n{font-size:11.5px;color:var(--accent-deep);font-weight:700;margin-top:8px;display:block;}
+.noresult{
+  display:none;padding:26px;text-align:center;color:var(--text-3);font-size:13.5px;
+  background:var(--panel);border:1px dashed var(--line);border-radius:var(--radius-card);
+}
+.noresult.show{display:block;}
+
+/* 深度解析 */
+.deep{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:26px 28px;box-shadow:var(--shadow);
+}
+.deep h3{font-size:16.5px;margin:24px 0 9px;padding-left:11px;border-left:3px solid var(--accent);}
+.deep h3:first-child{margin-top:0;}
+.deep p{font-size:14.5px;color:var(--text-2);line-height:1.92;}
+.deep ul{font-size:14px;color:var(--text-2);line-height:1.85;}
+.deep ul li b{color:var(--text);}
+.deep .case{
+  background:var(--panel-2);border-radius:10px;padding:14px 16px;margin:12px 0;
+  font-size:13.5px;color:var(--text-2);line-height:1.85;
+}
+.deep .case b{color:var(--text);}
+.compare{width:100%;border-collapse:collapse;font-size:13.5px;margin:12px 0;}
+.compare th,.compare td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top;}
+.compare th{background:var(--panel-2);font-weight:600;color:var(--text);font-size:13px;}
+.compare td{color:var(--text-2);}
+
+/* 指南步骤 */
+.steps{display:grid;gap:13px;}
+.step{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:16px 18px 16px 58px;position:relative;box-shadow:var(--shadow);
+}
+.step .num{
+  position:absolute;left:16px;top:16px;width:28px;height:28px;border-radius:8px;
+  background:var(--brand);color:var(--accent);font-size:13px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+}
+.step h3{font-size:14.5px;margin-bottom:5px;}
+.step p{font-size:13.5px;color:var(--text-2);margin:0;line-height:1.78;}
+
+/* FAQ */
+.faq{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--shadow);}
+.faq details{border-bottom:1px solid var(--line);}
+.faq details:last-child{border-bottom:none;}
+.faq summary{
+  cursor:pointer;padding:15px 44px 15px 18px;font-size:14.5px;font-weight:600;
+  position:relative;list-style:none;transition:background .16s;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary:hover{background:var(--panel-2);}
+.faq summary::after{
+  content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);
+  font-size:19px;color:var(--accent-deep);font-weight:400;transition:transform .2s;
+}
+.faq details[open] summary::after{content:"−";}
+.faq .ans{padding:0 18px 16px;font-size:13.8px;color:var(--text-2);line-height:1.85;}
+.faq .ans strong{color:var(--text);}
+
+/* 评论 */
+.cmts{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:12px;}
+.cmt{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:13px 15px;box-shadow:var(--shadow);
+}
+.cmt-head{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.avatar{
+  width:26px;height:26px;border-radius:50%;flex:0 0 auto;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;color:#241d10;background:var(--accent-soft);
+}
+.cmt-head .nick{font-size:13px;font-weight:600;color:var(--text);}
+.cmt-head .when{font-size:11.5px;color:var(--text-3);margin-left:auto;}
+.cmt p{font-size:13.2px;color:var(--text-2);margin:0;line-height:1.75;}
+
+/* 资讯 */
+.news{display:grid;gap:12px;}
+.news-item{
+  display:grid;grid-template-columns:150px 1fr;gap:16px;
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:12px;box-shadow:var(--shadow);transition:border-color .18s;
+}
+.news-item:hover{border-color:var(--accent-deep);}
+.news-item img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:9px;}
+.news-item h3{font-size:14.8px;margin-bottom:5px;line-height:1.5;}
+.news-item .meta{font-size:12px;color:var(--text-3);margin-bottom:6px;}
+.news-item p{font-size:13.2px;color:var(--text-2);margin:0;line-height:1.72;}
+
+/* 相关推荐 标签索引 */
+.reclist{display:flex;flex-wrap:wrap;gap:9px;}
+.reclist a{
+  background:var(--panel);border:1px solid var(--line);border-radius:100px;
+  padding:7px 15px;font-size:13.2px;color:var(--text-2);transition:all .16s;
+}
+.reclist a:hover{border-color:var(--accent-deep);color:var(--text);background:var(--accent-soft);}
+
+/* 榜单 */
+.rank{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);box-shadow:var(--shadow);overflow:hidden;}
+.rank li{
+  list-style:none;margin:0;display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;
+  padding:11px 16px;border-bottom:1px solid var(--line);font-size:14px;
+}
+.rank li:last-child{border-bottom:none;}
+.rank .no{
+  width:24px;height:24px;border-radius:7px;background:var(--panel-2);color:var(--text-3);
+  display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:800;
+}
+.rank li:nth-child(1) .no{background:var(--accent);color:#241d10;}
+.rank li:nth-child(2) .no{background:var(--accent-soft);color:#5c4410;}
+.rank li:nth-child(3) .no{background:#e8dcc0;color:#5c4410;}
+.rank .rv{font-size:12.5px;color:var(--text-3);white-space:nowrap;}
+.rank .rv b{color:var(--accent-deep);}
+
+/* 投稿互动 */
+.submit{
+  background:linear-gradient(150deg,var(--brand) 0%,#2f2742 100%);
+  border-radius:var(--radius-banner);padding:26px 28px;color:#efe9dc;
+  display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;
+}
+.submit h2{font-size:19px;color:#fff;margin-bottom:8px;}
+.submit p{font-size:13.5px;color:#c9c1d2;margin:0;line-height:1.8;max-width:44em;}
+.submit-actions{display:flex;flex-direction:column;gap:9px;}
+
+/* 右辅助栏 */
+.side-right{position:sticky;top:var(--offset);}
+.panel{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:15px;box-shadow:var(--shadow);margin-bottom:16px;
+}
+.panel h3{font-size:13px;letter-spacing:.8px;color:var(--text);margin-bottom:11px;display:flex;align-items:center;gap:7px;}
+.panel h3::before{content:"";width:3px;height:13px;border-radius:2px;background:var(--accent);display:block;}
+.hotlist{display:flex;flex-direction:column;gap:2px;}
+.hotlist a{
+  display:grid;grid-template-columns:20px 1fr;gap:8px;padding:7px 4px;border-radius:7px;
+  font-size:13.2px;color:var(--text-2);line-height:1.5;transition:background .16s;
+}
+.hotlist a:hover{background:var(--panel-2);color:var(--text);}
+.hotlist i{font-style:normal;font-size:12px;color:var(--text-3);font-weight:700;text-align:center;}
+.hotlist a:nth-child(-n+3) i{color:var(--accent-deep);}
+.updatelist{list-style:none;margin:0;padding:0;font-size:13px;}
+.updatelist li{
+  display:grid;grid-template-columns:1fr auto;gap:8px;padding:7px 0;border-bottom:1px dashed var(--line);
+  margin:0;color:var(--text-2);
+}
+.updatelist li:last-child{border-bottom:none;}
+.updatelist time{font-size:11.5px;color:var(--text-3);white-space:nowrap;}
+.mininote{font-size:12.5px;color:var(--text-3);line-height:1.75;margin:0;}
+
+/* 回到顶部 */
+.totop{
+  position:fixed;right:18px;bottom:22px;z-index:50;width:42px;height:42px;border-radius:50%;
+  border:1px solid var(--line);background:var(--panel);color:var(--text-2);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);
+  opacity:0;pointer-events:none;transition:opacity .22s,transform .22s;
+}
+.totop.show{opacity:1;pointer-events:auto;}
+.totop:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);}
+
+/* 页脚 */
+footer{
+  margin-top:40px;background:var(--brand);color:#b9b1c4;padding:38px 0 22px;font-size:13px;
+}
+.foot-grid{
+  max-width:1360px;margin:0 auto;padding:0 18px;
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;
+}
+.foot-brand{display:flex;align-items:center;gap:9px;margin-bottom:11px;}
+.foot-brand svg{width:26px;height:26px;}
+.foot-brand strong{color:#f4efe4;font-size:15px;}
+.foot-desc{line-height:1.85;font-size:12.8px;color:#9d94ab;max-width:26em;}
+.foot-col h4{color:#efe9dc;font-size:13px;margin-bottom:10px;letter-spacing:.5px;}
+.foot-col a{display:block;padding:4px 0;color:#a89fba;font-size:12.8px;transition:color .16s;}
+.foot-col a:hover{color:var(--accent-soft);}
+.foot-bottom{
+  max-width:1360px;margin:26px auto 0;padding:16px 18px 0;border-top:1px solid rgba(255,255,255,.09);
+  font-size:12px;color:#7d7489;display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between;
+}
+
+/* ============ 响应式 ============ */
+@media(max-width:1180px){
+  .layout{grid-template-columns:190px minmax(0,1fr);}
+  .side-right{grid-column:1/-1;position:static;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
+  .side-right .panel{margin-bottom:0;}
+}
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;gap:28px;padding:38px 18px 42px;}
+  .hero-visual{max-width:520px;}
+  .mainnav{display:none;}
+  .burger{display:flex;}
+  .searchbox input{width:140px;}
+  .layout{grid-template-columns:minmax(0,1fr);}
+  .side-left{position:static;order:3;}
+  .side-left .side-card{margin-bottom:0;}
+  .chan{flex-direction:row;flex-wrap:wrap;gap:6px;}
+  .chan a{flex:0 0 auto;background:var(--panel);border:1px solid var(--line);font-size:13px;}
+  .side-right{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:22px;}
+}
+@media(max-width:740px){
+  body{font-size:14.5px;}
+  .topbar-inner{gap:10px;padding:0 12px;}
+  .topbar-brand{font-size:12px;padding-right:10px;}
+  .topbar-scroll{gap:18px;font-size:12px;}
+  .head-inner{gap:10px;padding:0 12px;}
+  .logo-text{font-size:14.5px;}
+  .searchbox{display:none;}
+  .btn-ghost{display:none;}
+  .wrap{padding:0 13px;}
+  .layout{padding:22px 0 6px;gap:22px;}
+  .hero h1{font-size:27px;}
+  .hero-lead{font-size:14px;}
+  .hero-stats{gap:18px;}
+  .overview,.deep{padding:18px 16px;}
+  .cards{grid-template-columns:1fr;}
+  .cat-grid{grid-template-columns:1fr 1fr;}
+  .cmts{grid-template-columns:1fr;}
+  .news-item{grid-template-columns:104px 1fr;gap:11px;}
+  .news-item h3{font-size:13.8px;}
+  .feed li{grid-template-columns:1fr;gap:3px;padding:12px 14px;}
+  .feed time{font-size:11.5px;}
+  .submit{grid-template-columns:1fr;padding:20px 18px;}
+  .submit-actions{flex-direction:row;flex-wrap:wrap;}
+  .side-right{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr;gap:18px;}
+  .totop{right:12px;bottom:14px;width:38px;height:38px;}
+  .deep h3{font-size:15.5px;}
+  .compare{font-size:12.5px;}
+  .compare th,.compare td{padding:6px 8px;}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;}
+  html{scroll-behavior:auto;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-brand">五一黑料社每日大赛</span>
+    <div class="topbar-scroll">
+      <span><b>11月8日</b> 第312期赛程已开榜：早场「同城装修报价单」三源比对</span>
+      <span><b>11月7日</b> 「奶茶加盟招商话术」录音补证完成，状态改为已核实</span>
+      <span><b>11月6日</b> 本周总榜候选池更新至 27 条，周冠11月9日公布</span>
+      <span><b>11月8日</b> 第312期赛程已开榜：早场「同城装修报价单」三源比对</span>
+      <span><b>11月7日</b> 「奶茶加盟招商话术」录音补证完成，状态改为已核实</span>
+      <span><b>11月6日</b> 本周总榜候选池更新至 27 条，周冠11月9日公布</span>
+    </div>
+  </div>
+</div>
+
+<!-- 页头 -->
+<header class="head">
+  <div class="head-inner">
+    <a class="logo" href="/#top" aria-label="五一黑料社每日大赛首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#16121f"/>
+        <path d="M18 44 L32 16 L46 44 Z" fill="none" stroke="#f2b544" stroke-width="4" stroke-linejoin="round"/>
+        <circle cx="32" cy="36" r="4" fill="#f2b544"/>
+      </svg>
+      <span class="logo-text">五一黑料社每日大赛</span>
+    </a>
+    <nav class="mainnav" aria-label="主题导航">
+      <a href="/#overview" class="on">赛况概览</a>
+      <a href="/#picks">今日精选</a>
+      <a href="/#feed">赛程动态</a>
+      <a href="/#cats">选题分类</a>
+      <a href="/#deep">评审拆解</a>
+      <a href="/#guide">参赛路径</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">参赛者说</a>
+      <a href="/#news">爆料资讯</a>
+      <a href="/#rank">每日榜</a>
+    </nav>
+    <div class="head-side">
+      <div class="searchbox">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+        <input id="q" type="search" placeholder="搜条目/选题/规则" aria-label="站内条目搜索">
+      </div>
+      <button class="btn-ghost" type="button" id="toSubmit">我要投稿</button>
+      <button class="burger" type="button" id="burger" aria-label="打开导航菜单" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- 移动抽屉 -->
+<div class="drawer-mask" id="mask"></div>
+<aside class="drawer" id="drawer" aria-label="移动导航">
+  <button class="drawer-close" id="drawerClose" aria-label="关闭导航">×</button>
+  <h3>频道</h3>
+  <a href="/#overview">赛况概览</a>
+  <a href="/#picks">今日精选</a>
+  <a href="/#feed">赛程动态</a>
+  <a href="/#cats">选题分类</a>
+  <a href="/#deep">评审拆解</a>
+  <a href="/#guide">参赛路径</a>
+  <a href="/#faq">常见问题</a>
+  <a href="/#comments">参赛者说</a>
+  <a href="/#news">爆料资讯</a>
+  <a href="/#rank">每日榜</a>
+  <a href="/#related">相关推荐</a>
+  <a href="/#submit">投稿入口</a>
+</aside>
+
+<!-- 首屏 -->
+<div class="hero" id="top">
+  <div class="hero-grid">
+    <div>
+      <span class="hero-tag"><i></i>每日更新 · 第312期</span>
+      <h1>五一黑料社每日大赛</h1>
+      <p class="hero-lead">这里按天汇集爆料类参赛条目：<b>同城服务报价、加盟招商话术、招聘承诺、二手交易纠纷、租房合同细节</b>五个方向，每条带时间线、来源等级与当事人回应状态，赛程、榜单、评审表和补证进度一并公开。</p>
+      <div class="hero-actions">
+        <a class="btn-main" href="/#picks">看今日精选条目</a>
+        <a class="btn-line" href="/#deep">读评审规则拆解</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>312</strong>已开赛期数</div>
+        <div><strong>27</strong>本周候选条目</div>
+        <div><strong>5</strong>固定选题方向</div>
+        <div><strong>48h</strong>待核实补证窗口</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="board">
+        <div class="board-head"><b>11月8日 赛程板</b><span>北京时间</span></div>
+        <div class="slot hot"><time>09:00</time><span class="name">同城装修报价单三源比对</span><span class="tag">已核实</span></div>
+        <div class="slot"><time>11:30</time><span class="name">奶茶加盟招商话术录音</span><span class="tag">补证完成</span></div>
+        <div class="slot"><time>14:00</time><span class="name">招聘JD薪资区间前后差异</span><span class="tag">评审中</span></div>
+        <div class="slot"><time>16:30</time><span class="name">二手相机验机视频争议</span><span class="tag">待核实</span></div>
+        <div class="slot"><time>19:00</time><span class="name">租房合同违约金条款截图</span><span class="tag">已排期</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="layout">
+
+    <!-- 左频道 -->
+    <aside class="side-left">
+      <div class="side-card">
+        <h3>选题频道</h3>
+        <nav class="chan" aria-label="选题频道">
+          <a href="/#cats" class="cur">同城服务报价 <em>64</em></a>
+          <a href="/#cats">加盟招商话术 <em>51</em></a>
+          <a href="/#cats">招聘承诺差异 <em>47</em></a>
+          <a href="/#cats">二手交易纠纷 <em>43</em></a>
+          <a href="/#cats">租房合同细节 <em>38</em></a>
+          <a href="/#cats">预付卡退款 <em>29</em></a>
+          <a href="/#cats">直播带货话术 <em>26</em></a>
+          <a href="/#cats">医美项目报价 <em>22</em></a>
+          <a href="/#cats">教培退费承诺 <em>19</em></a>
+          <a href="/#cats">宠物寄养条款 <em>14</em></a>
+        </nav>
+      </div>
+      <div class="side-card">
+        <h3>赛事节奏</h3>
+        <ul class="updatelist">
+          <li><span>早场开榜</span><time>09:00</time></li>
+          <li><span>午间补证</span><time>12:00</time></li>
+          <li><span>评审初评</span><time>15:00</time></li>
+          <li><span>当日榜单</span><time>21:00</time></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- 主内容 -->
+    <main class="maincol">
+
+      <!-- 1 领域概览 -->
+      <section class="block" id="overview">
+        <div class="block-head">
+          <div class="kicker">领域概览</div>
+          <h2>爆料赛覆盖的五类日常纠纷选题</h2>
+          <p>从报价单到合同条款，参赛条目集中在普通人最容易踩坑的消费场景</p>
+        </div>
+        <div class="overview">
+          <p>这类每日爆料赛的选题池，基本围绕<span class="hl">钱和承诺</span>展开。同城服务报价单是最密的一类——装修、搬家、空调清洗，同一套房在不同渠道能报出差价三成的方案，参赛者要做的是把三份报价逐项对齐，标出加项出现在哪一行。加盟招商话术排第二，奶茶、零食、干洗店居多，录音里常见“回本周期”和“总部扶持”两个关键词，评审看重的是话术与实际合同条款的落差。</p>
+          <p>招聘承诺差异集中在底薪结构和试用期时长上。2026年10月下旬有参赛者把同一家公司三个招聘平台上的JD并排贴出，底薪一栏分别写着4500、5200、面议，这条最终拿到当日第二。二手交易纠纷的难点在证据链：验机视频、聊天记录、快递面单三样缺一不可，缺面单的条目通常只能进待核实区。</p>
+          <p>租房合同细节是近两个月上升最快的方向。押金退还条件、违约金比例、维修责任划分，三条里任意一条被改动过，都算合格选题。预付卡退款、直播带货话术、医美项目报价、教培退费承诺、宠物寄养条款属于长尾方向，投递量少，但一旦核实，进入周榜的概率反而更高——竞争者少，评审给的分更集中。</p>
+        </div>
+      </section>
+
+      <!-- 2 今日精选 -->
+      <section class="block" id="picks">
+        <div class="block-head">
+          <div class="kicker">今日精选</div>
+          <h2>第312期值得逐条核对的参赛条目</h2>
+          <p>六条来自不同方向，均标注来源等级与当前核实状态</p>
+        </div>
+        <div class="cards">
+
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/wuyi-zx01/400/300" width="400" height="300" loading="lazy" alt="装修报价单上标注的增项行与总价对比"><span class="badge">同城服务报价</span></div>
+            <div class="card-body">
+              <h3>同一套房三份装修报价单的增项位置</h3>
+              <p class="desc">业主拿到三份报价，总价分别是8.6万、9.4万、11.2万。差异不在主材，而在水电改造按米计价还是按点位计价，第三份把拆墙费单列成两行。参赛者逐行对齐后标出7处口径差异。</p>
+              <div class="tags"><span>报价单比对</span><span>水电改造</span><span>增项</span></div>
+              <div class="card-meta"><span>来源等级 <b>A</b></span><span>热度 9.4</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/wuyi-jm02/400/300" width="400" height="300" loading="lazy" alt="加盟招商说明会上展示的回本周期计算表"><span class="badge">加盟招商话术</span></div>
+            <div class="card-body">
+              <h3>奶茶加盟说明会录音里的回本周期</h3>
+              <p class="desc">录音里招商经理说“最快八个月回本”，合同附件写的是“参考周期18至24个月”。两处表述被剪进同一条音频，时长2分17秒，带会场背景音与签约桌编号。</p>
+              <div class="tags"><span>回本周期</span><span>合同附件</span><span>录音补证</span></div>
+              <div class="card-meta"><span>来源等级 <b>A</b></span><span>热度 9.1</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/wuyi-zp03/400/300" width="400" height="300" loading="lazy" alt="三个招聘平台上同一岗位的薪资截图并排"><span class="badge">招聘承诺差异</span></div>
+            <div class="card-body">
+              <h3>同一岗位在三个平台的底薪写法</h3>
+              <p class="desc">某连锁餐饮储备店长岗，A平台写4500至6000，B平台写5200起，C平台写面议。面试时HR口头说“底薪4800加全勤”，与三处均不符。截图带发布时间，最早一份在10月12日。</p>
+              <div class="tags"><span>底薪结构</span><span>JD截图</span><span>口头承诺</span></div>
+              <div class="card-meta"><span>来源等级 <b>B</b></span><span>热度 8.7</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/wuyi-es04/400/300" width="400" height="300" loading="lazy" alt="二手相机验机视频画面与快递面单"><span class="badge">二手交易纠纷</span></div>
+            <div class="card-body">
+              <h3>二手相机验机视频与快门数争议</h3>
+              <p class="desc">卖家称快门数1.2万，买家收到后读出3.8万。验机视频只拍了外观没拍参数页，快递面单保价金额与成交价差900元。争议点集中在视频拍摄时间与发货时间的先后。</p>
+              <div class="tags"><span>快门数</span><span>验机视频</span><span>保价差额</span></div>
+              <div class="card-meta"><span>来源等级 <b>B</b></span><span>热度 8.3</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/wuyi-zf05/400/300" width="400" height="300" loading="lazy" alt="租房合同中违约金条款的放大截图"><span class="badge">租房合同细节</span></div>
+            <div class="card-body">
+              <h3>租房合同违约金的两个不同比例</h3>
+              <p class="desc">合同正文写“提前退租按两个月租金赔付”，补充协议写“按实际损失计算，最高不超过一个月”。同一份文件两处冲突，中介称以补充协议为准，房东微信里又说不认。</p>
+              <div class="tags"><span>违约金</span><span>补充协议</span><span>押金退还</span></div>
+              <div class="card-meta"><span>来源等级 <b>A</b></span><span>热度 8.9</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/wuyi-yf06/400/300" width="400" height="300" loading="lazy" alt="预付卡余额与门店停业告示的对照图"><span class="badge">预付卡退款</span></div>
+            <div class="card-body">
+              <h3>健身房闭店前七天的续卡促销</h3>
+              <p class="desc">门店10月28日贴出停业通知，10月21日还在推“续一年送半年”。参赛者整理了12名会员的充值时间与金额，合计4.7万元，其中9人充值发生在停业通知前两周内。</p>
+              <div class="tags"><span>预付卡</span><span>闭店通知</span><span>充值时间线</span></div>
+              <div class="card-meta"><span>来源等级 <b>A</b></span><span>热度 8.6</span></div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- 3 赛程动态 -->
+      <section class="block" id="feed">
+        <div class="block-head">
+          <div class="kicker">赛程动态</div>
+          <h2>11月6日至8日条目状态变化</h2>
+          <p>按时间倒序，记录核实、补证、撤稿与名次调整</p>
+        </div>
+        <ul class="feed">
+          <li><time>11-08 20:41</time><div><div class="t">「同城装修报价单三源比对」升为当日第一</div><div class="s">第三份报价单的拆墙费拆分被确认为重复计价，评审追加线索完整度分，条目从第四升至第一，总分 <em>86.5</em>。</div></div></li>
+          <li><time>11-08 17:12</time><div><div class="t">「二手相机验机视频争议」退回待核实</div><div class="s">买家提供的参数页截图缺少拍摄时间，按规则扣来源分20分，条目暂列第七，需在11月10日前补交原始文件。</div></div></li>
+          <li><time>11-08 14:05</time><div><div class="t">「招聘JD薪资区间前后差异」进入评审中</div><div class="s">三张截图的时间戳已核验，最早一份为10月12日，评审要求补充面试录音或书面offer，条目当前第五。</div></div></li>
+          <li><time>11-08 11:33</time><div><div class="t">「奶茶加盟招商话术录音」状态改为已核实</div><div class="s">会场背景音与签约桌编号交叉匹配成功，录音2分17秒完整未剪辑，条目升至第二，总分 <em>84.0</em>。</div></div></li>
+          <li><time>11-08 09:02</time><div><div class="t">第312期赛程开榜，五个方向共18条入池</div><div class="s">同城服务报价6条、加盟招商4条、招聘承诺3条、二手交易3条、租房合同2条，其中待核实条目7条。</div></div></li>
+          <li><time>11-07 21:18</time><div><div class="t">「健身房闭店前七天续卡促销」完成会员名单交叉</div><div class="s">12名会员中9人充值时间落在10月14日至10月21日之间，与停业通知时间形成7天间隔，条目列为第311期第三。</div></div></li>
+          <li><time>11-07 16:44</time><div><div class="t">第311期一条医美报价条目撤稿</div><div class="s">机构名称与门店地址无法对应，投递者未能提供消费凭证，按规则撤稿并公示更正说明，账号进入14天观察期。</div></div></li>
+          <li><time>11-07 10:27</time><div><div class="t">「租房合同违约金」补充协议原件到位</div><div class="s">房东提供了签字页扫描件，补充协议日期早于正文签署日期三天，条目从待核实转为已核实，名次上升两位。</div></div></li>
+          <li><time>11-06 19:50</time><div><div class="t">本周总榜候选池更新至27条</div><div class="s">新增6条来自预付卡与教培退费方向，周冠评选延至11月9日，评审组增加一名合同法方向外部评审。</div></div></li>
+          <li><time>11-06 15:08</time><div><div class="t">「直播带货话术」两条投递合并处理</div><div class="s">两名投递者提交同一场直播的不同片段，按规则以时间线更完整的一方为主投，另一方列为补充投递，奖励按7:3分配。</div></div></li>
+        </ul>
+      </section>
+
+      <!-- 4 分类入口 -->
+      <section class="block" id="cats">
+        <div class="block-head">
+          <div class="kicker">选题分类</div>
+          <h2>按消费场景找条目</h2>
+          <p>点选筛选当前列出的选题方向</p>
+        </div>
+        <div class="filters" id="filters" role="group" aria-label="选题分类筛选">
+          <button type="button" class="on" data-cat="all">全部</button>
+          <button type="button" data-cat="同城服务报价">同城服务报价</button>
+          <button type="button" data-cat="加盟招商话术">加盟招商话术</button>
+          <button type="button" data-cat="招聘承诺差异">招聘承诺差异</button>
+          <button type="button" data-cat="二手交易纠纷">二手交易纠纷</button>
+          <button type="button" data-cat="租房合同细节">租房合同细节</button>
+          <button type="button" data-cat="预付卡退款">预付卡退款</button>
+          <button type="button" data-cat="直播带货话术">直播带货话术</button>
+          <button type="button" data-cat="教培退费承诺">教培退费承诺</button>
+        </div>
+        <div class="cat-grid" id="catGrid">
+          <a class="cat" href="/#picks" data-cat="同城服务报价"><h3>同城服务报价</h3><p>装修、搬家、家电清洗的多份报价逐项对齐，找加项与计价口径差异。</p><span class="n">64 条已核实</span></a>
+          <a class="cat" href="/#picks" data-cat="加盟招商话术"><h3>加盟招商话术</h3><p>说明会录音、回本周期口径、合同附件与口头承诺的落差。</p><span class="n">51 条已核实</span></a>
+          <a class="cat" href="/#picks" data-cat="招聘承诺差异"><h3>招聘承诺差异</h3><p>同一岗位跨平台JD底薪写法、试用期时长、口头承诺与书面offer。</p><span class="n">47 条已核实</span></a>
+          <a class="cat" href="/#picks" data-cat="二手交易纠纷"><h3>二手交易纠纷</h3><p>验机视频、聊天记录、快递面单三件套齐全才进正式评审。</p><span class="n">43 条已核实</span></a>
+          <a class="cat" href="/#picks" data-cat="租房合同细节"><h3>租房合同细节</h3><p>违约金比例、押金退还条件、维修责任划分的条款冲突。</p><span class="n">38 条已核实</span></a>
+          <a class="cat" href="/#picks" data-cat="预付卡退款"><h3>预付卡退款</h3><p>闭店前促销时间线、会员充值记录、门店停业通知对照。</p><span class="n">29 条已核实</span></a>
+          <a class="cat" href="/#picks" data-cat="直播带货话术"><h3>直播带货话术</h3><p>限时报价、库存话术、赠品口径与事后客服答复的差异。</p><span class="n">26 条已核实</span></a>
+          <a class="cat" href="/#picks" data-cat="教培退费承诺"><h3>教培退费承诺</h3><p>退费协议条款、课时折算方式、停课通知与承诺书时间差。</p><span class="n">19 条已核实</span></a>
+        </div>
+        <div class="noresult" id="noresult">当前分类下暂无列出的条目，可切换到「全部」查看。</div>
+      </section>
+
+      <!-- 5 深度解析 -->
+      <section class="block" id="deep">
+        <div class="block-head">
+          <div class="kicker">评审拆解</div>
+          <h2>一条爆料怎么被判成“能用”</h2>
+          <p>评分表、来源分级与补证窗口的具体运作</p>
+        </div>
+        <div class="deep">
+          <p>每日大赛的评审表不是印象打分，四项硬指标相加，单项扣分都要写明理由。这套规则在2026年9月调整过一次，理解调整前后的差别，比记住总分更有用。</p>
+
+          <h3>四项指标与权重</h3>
+          <p>当前评审表拆成四块：线索来源可核验程度40分、时间线完整度25分、当事人回应是否收录20分、表述克制程度15分。四项相加为单条爆料的基础分，低于60分不进当日榜单，但会保留在赛程页的“已入池”区。</p>
+          <ul>
+            <li><b>来源可核验 40 分</b>：合同、报价单、录音、截图，每类有独立的核验路径。录音要求时长、身份线索、场景说明三项齐全。</li>
+            <li><b>时间线完整 25 分</b>：至少两个节点带具体日期，节点之间能连成因果，不能只给一个孤立时间点。</li>
+            <li><b>回应收录 20 分</b>：当事方是否被联系、答复原文是否贴出、拒答也要记录。未联系直接扣满。</li>
+            <li><b>表述克制 15 分</b>：出现“肯定”“百分百”“必然是”这类断言，每处扣3分。</li>
+          </ul>
+
+          <h3>2026年9月的规则改动</h3>
+          <p>改动前，“当事人回应”只占10分，很多条目靠材料本身拿高分，事后被当事方反驳的情况不少。9月起这一项提到20分，同时新增一条：当事方明确拒答的，按“已联系未获答复”计15分，比完全不联系高，比给出书面答复低5分。</p>
+          <div class="case"><b>案例对照：</b>10月19日的「宠物寄养条款」条目，材料本身只有一份寄养协议和两张笼舍照片，来源分只拿到28分。投递者当天下午联系到店主，店主口头答复“条款是总部模板”，这句话被完整记录，回应项拿到15分，总分71.5，压线进榜。同样材料若不联系当事方，回应项为0，总分56.5，直接出局。这条改动让“多打一个电话”变成了实际分差。</div>
+
+          <h3>来源分级 A / B / C 的实际含义</h3>
+          <table class="compare">
+            <tr><th>等级</th><th>判定依据</th><th>对名次的影响</th></tr>
+            <tr><td>A</td><td>原始文件或原始录音，带可核验时间与当事方身份线索</td><td>可竞争当日前三，进入周榜候选池</td></tr>
+            <tr><td>B</td><td>截图、转述、二手转录，缺一项原始材料</td><td>可上榜，但单日最高排第四</td></tr>
+            <tr><td>C</td><td>仅有文字描述或单一聊天记录</td><td>只进待核实区，不计入当日榜单</td></tr>
+          </table>
+          <p>分级不看出身看材料。个人投递与机构投递适用同一张表，11月7日撤稿的那条医美报价，就是因为机构名称与门店地址无法对应，从B降为C后直接出池。</p>
+
+          <h3>48小时补证窗口怎么算</h3>
+          <p>待核实条目从入池时刻起算48小时。窗口内补齐材料，状态改为已核实并按新分数重排；超时未补，条目转入“历史待核实”归档，不再参与当期名次。11月8日退回待核实的二手相机条目，窗口截止时间是11月10日17时12分。</p>
+          <p>补证不是无限次。同一条目最多补两次，第二次补证需说明第一次为何缺失。这条限制来自10月中旬一起反复补交截图的案例，当时一条条目补了五次，评审组认为损耗了榜单的时效性。</p>
+        </div>
+      </section>
+
+      <!-- 6 参赛路径 -->
+      <section class="block" id="guide">
+        <div class="block-head">
+          <div class="kicker">参赛路径</div>
+          <h2>从看到一条线索到进入榜单</h2>
+          <p>顺序有讲究，先做什么后做什么影响最终得分</p>
+        </div>
+        <div class="steps">
+          <div class="step"><span class="num">1</span><h3>先判断这条线索值不值得投</h3><p>看两个条件：有没有具体金额或具体条款，能不能找到两个以上时间节点。只有情绪描述、没有金额和时间的，投了也是C级。</p></div>
+          <div class="step"><span class="num">2</span><h3>把材料按类型归档，别混在一起</h3><p>合同类、录音类、截图类分开存。录音单独标注时长与场景，截图保留原始文件不要二次压缩，二次压缩会丢失时间戳元数据。</p></div>
+          <div class="step"><span class="num">3</span><h3>联系当事方，哪怕对方拒答</h3><p>回应项占20分。拒答也算记录，按15分计。联系方式和时间要写清楚，评审会抽查通话记录或消息截图。</p></div>
+          <div class="step"><span class="num">4</span><h3>写时间线，两个节点起步</h3><p>节点要带日期，节点之间写清因果。比如“10月21日仍在推续卡”到“10月28日贴停业通知”，中间七天就是核心信息。</p></div>
+          <div class="step"><span class="num">5</span><h3>表述收着写，断言会扣分</h3><p>15分的克制项，出现绝对化措辞每处扣3分。写“合同附件标注18至24个月”，比写“明显是骗人”得分高得多。</p></div>
+          <div class="step"><span class="num">6</span><h3>盯住48小时窗口</h3><p>入池后状态显示待核实的，两天内补齐材料。超时归档后不能复活，只能作为新条目的背景材料重新投递。</p></div>
+        </div>
+      </section>
+
+      <!-- 7 FAQ -->
+      <section class="block" id="faq">
+        <div class="block-head">
+          <div class="kicker">常见问题</div>
+          <h2>参赛者问得最多的六件事</h2>
+        </div>
+        <div class="faq">
+          <details open>
+            <summary>每日大赛的选题评分看哪几项？</summary>
+            <div class="ans">评审表拆成四项：<strong>线索来源可核验程度40分、时间线完整度25分、当事人回应是否收录20分、表述克制程度15分</strong>，四项相加为单条爆料的基础分，低于60分不进当日榜单。四项之外没有印象分，也没有“题材重要”的额外加分。</div>
+          </details>
+          <details>
+            <summary>爆料条目里的“待核实”标签是什么意思？</summary>
+            <div class="ans">待核实指该条目的关键节点只有单一来源，或缺当事人书面回应。这类条目会保留在赛程页但不计入当日前三，通常48小时内补证后改为“已核实”，补不齐则转入历史归档。11月8日退回待核实的二手相机条目就属于缺原始文件这一类。</div>
+          </details>
+          <details>
+            <summary>同一事件被多人投递，署名算谁的？</summary>
+            <div class="ans">以首个提交完整时间线（含至少两个节点时间戳）的投递为准，后续补充材料的人列为“补充投递”，署名并列但排序在后，奖励按7:3分配。11月6日两条直播带货话术投递合并处理，用的就是这条规则。</div>
+          </details>
+          <details>
+            <summary>录音类素材怎么判断能不能用？</summary>
+            <div class="ans">需要同时满足三点：录音时长超过90秒、有明确对话双方身份线索、能提供录制时间与场景说明。缺少场景说明的录音在评审中按“来源不明”扣20分。11月8日那条奶茶加盟录音之所以能升为已核实，靠的是会场背景音与签约桌编号的交叉匹配。</div>
+          </details>
+          <details>
+            <summary>每日大赛和每周总榜是什么关系？</summary>
+            <div class="ans">每日榜单前五自动进入当周总榜候选池，周榜再按传播反馈与后续补证情况重排。周榜第一名不一定来自单日第一，2026年10月下旬就出现过日榜第三最终拿下周冠的情况，原因是该条目在周内补到了当事方书面答复。</div>
+          </details>
+          <details>
+            <summary>投递后被判定不实会有什么处理？</summary>
+            <div class="ans">首次判为不实的条目做撤稿并公示更正说明，账号进入14天观察期；同一账号两次判为不实，取消当季参赛资格，已发奖励追回。11月7日撤稿的医美报价条目，处理结果就是撤稿加14天观察期。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8 参赛者说 -->
+      <section class="block" id="comments">
+        <div class="block-head">
+          <div class="kicker">参赛者说</div>
+          <h2>来自投递者与围观者的十五条留言</h2>
+        </div>
+        <div class="cmts">
+          <div class="cmt"><div class="cmt-head"><span class="avatar">陆</span><span class="nick">陆家嘴夜班</span><span class="when">11-08 21:06</span></div><p>三份报价单那条我逐行对过，拆墙费确实被拆成两行收了两遍。这种加项不写在总价里，第一次装修的人根本看不出来。</p></div>
+          <div class="cmt"><div class="cmt-head"><span class="avatar">茶</span><span class="nick">茶渍印子</span><span class="when">11-08 20:33</span></div><p>回本周期那段录音我听了，经理说“最快八个月”的时候底下有人笑了一声。这个笑声比话术本身更能说明问题。</p></div>
+          <div class="cmt"><div class="cmt-head"><span class="avatar">老</span><span class="nick">老周修空调</span><span class="when">11-08 19:47</span></div><p>干了十一年家电清洗，按点位和按米计价差的不是一点。同城报价这方向条目还是太少，很多加项在电话里就报完了，根本没单子。</p></div>
+          <div class="cmt"><div class="cmt-head"><span class="avatar">快</span><span class="nick">快门数三千</span><span class="when">11-08 18:12</span></div><p>相机那条退回待核实挺可惜。验机视频不拍参数页是常见毛病，买家当时要是多录十秒就没这事了。</p></div>
+          <div class="cmt"><div class="cmt-head"><span class="avatar">合</span><span class="nick">合同第7条</span><span class="when">11-08 16:55</span></div><p>违约金那两份文件日期差三天，补充协议在前正文在后，这种顺序中介一般不会主动说。押金退还条件也常被藏在补充协议里。</p></div>
+          <div class="cmt"><div class="cmt-head"><span class="avatar">续</span><span class="nick">续卡续到哭</span><span class="when">11-08 15:20</span></div><p>我就是那家健身房9个会员之一，10月19号刚续的两年。停业通知贴出来那天我还在群里问教练什么时候开课。</p></div>
+          <div class="cmt"><div class="cmt-head"><span class="avatar">J</span><span class="nick">JD截图党</span><span class="when">11-08 13:04</span></div><p>三个平台底薪写法不一样太常见了。5200起那个“起”字后面还有小字，写着含全勤和绩效，实际到手没那么高。</p></div>
+          <div class="cmt"><div class="cmt-head"><span class="avatar">评</span><span class="nick">评审表爱好者</span><span class="when">11-08 11:39</span></div><p>表述克制占15分这个设计有点意思。看过几条被扣分的，都是写“百分百骗局”，材料其实还行，毁在措辞上。</p></div>
+          <div class="cmt"><div class="cmt-head"><span class="avatar">宠</span><span class="nick">猫在寄养</span><span class="when">11-07 22:41</span></div><p>宠物寄养条款那条压线进榜，我觉得分数给低了。笼舍照片里饮水器是空的，这个细节比条款本身更值得追。</p></div>
+          <div class="cmt"><div class="cmt-head"><span class="avatar">奶</span><span class="nick">奶茶店隔壁</span><span class="when">11-07 19:28</span></div><p>我们商圈今年关了四家加盟奶茶店，都是差不多一年内开的。回本周期写18到24个月，实际能撑过一年的不多。</p></div>
+          <div class="cmt"><div class="cmt-head"><span class="avatar">路</span><span class="nick">路过看一眼</span><span class="when">11-07 15:03</span></div><p>榜单更新到21点有点晚，我一般早上就刷一遍，中午补证那段经常错过。</p></div>
+          <div class="cmt"><div class="cmt-head"><span class="avatar">医</span><span class="nick">医美避坑记</span><span class="when">11-07 12:50</span></div><p>那条撤稿的医美报价我本来想投类似的，机构名字和门店地址对不上就直接放弃了。这种材料投上去也是C级。</p></div>
+          <div class="cmt"><div class="cmt-head"><span class="avatar">补</span><span class="nick">补充投递员</span><span class="when">11-06 20:16</span></div><p>7:3分配我认，谁先交完整时间线谁拿大头，规则清楚。上次合并处理我拿的三成，够买两杯咖啡。</p></div>
+          <div class="cmt"><div class="cmt-head"><span class="avatar">教</span><span class="nick">课时还剩87节</span><span class="when">11-06 17:44</span></div><p>教培退费那方向条目少得可怜。退费协议里课时折算方式能差出四成，写明白的人不多，愿意投的人更少。</p></div>
+          <div class="cmt"><div class="cmt-head"><span class="avatar">周</span><span class="nick">周榜蹲守</span><span class="when">11-06 09:31</span></div><p>日榜第三拿周冠那事我印象深，当时还有人质疑，后来补到书面答复就没人说了。补证窗口确实能翻盘。</p></div>
+        </div>
+      </section>
+
+      <!-- 9 相关资讯 -->
+      <section class="block" id="news">
+        <div class="block-head">
+          <div class="kicker">爆料资讯</div>
+          <h2>十一月初的几条赛事与规则动向</h2>
+        </div>
+        <div class="news">
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/wuyi-nw01/600/400" width="600" height="400" loading="lazy" alt="评审组会议桌上摆放的评分表与补充协议样本">
+            <div>
+              <h3>评审组增设合同法方向外部评审</h3>
+              <div class="meta">2026-11-06 · 赛制</div>
+              <p>从第312期起，涉及违约金与补充协议的条目由一名执业八年的合同方向律师复核，首批复核条目共5条，其中2条名次发生变动。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/wuyi-nw02/600/400" width="600" height="400" loading="lazy" alt="健身房门口贴出的停业通知与会员维权群二维码">
+            <div>
+              <h3>健身房闭店条目带动12名会员联合投递</h3>
+              <div class="meta">2026-11-07 · 条目进展</div>
+              <p>12名会员在11月6日晚间提交充值凭证，合计金额从此前记录的4.7万元更新为6.1万元，其中3人充值发生在停业通知前三天内。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/wuyi-nw03/600/400" width="600" height="400" loading="lazy" alt="招聘平台上同一岗位的两个薪资截图对照">
+            <div>
+              <h3>招聘JD截图核验新增发布时间比对</h3>
+              <div class="meta">2026-11-05 · 规则</div>
+              <p>评审要求截图必须含平台发布时间，缺时间的按B级封顶。11月5日当天有4条招聘类条目因此降级，其中1条退出当日榜单。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/wuyi-nw04/600/400" width="600" height="400" loading="lazy" alt="二手相机验机视频截图与快门数参数页">
+            <div>
+              <h3>二手相机条目补证截止延至11月10日</h3>
+              <div class="meta">2026-11-08 · 条目进展</div>
+              <p>买家已联系到原卖家所在平台的客服，申请调取发货时的设备参数记录，回复周期预计两个工作日，评审同意在截止前保留条目位置。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/wuyi-nw05/600/400" width="600" height="400" loading="lazy" alt="奶茶加盟合同附件中的回本周期表格">
+            <div>
+              <h3>加盟类条目要求同时提交合同附件</h3>
+              <div class="meta">2026-11-04 · 规则</div>
+              <p>只提交说明会录音、不附合同附件的加盟类条目，回应项最高计10分。此项调整源于10月下旬三条录音条目事后无法对上合同文本。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/wuyi-nw06/600/400" width="600" height="400" loading="lazy" alt="周榜候选池的纸质名单与标记笔">
+            <div>
+              <h3>本周总榜候选池扩至27条，周冠延至11月9日</h3>
+              <div class="meta">2026-11-06 · 赛程</div>
+              <p>新增6条来自预付卡与教培退费方向，评审组表示延后一天是为等待两条待核实条目的补证结果，其中一条涉及课时折算比例。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 10 相关推荐 -->
+      <section class="block" id="related">
+        <div class="block-head">
+          <div class="kicker">相关推荐</div>
+          <h2>按具体方向继续找</h2>
+        </div>
+        <div class="reclist">
+          <a href="/#picks">装修报价单增项识别</a>
+          <a href="/#picks">加盟回本周期口径对照</a>
+          <a href="/#picks">跨平台JD底薪差异</a>
+          <a href="/#picks">二手相机快门数核验</a>
+          <a href="/#picks">租房补充协议日期顺序</a>
+          <a href="/#picks">预付卡闭店前促销时间线</a>
+          <a href="/#deep">来源分级A/B/C判定</a>
+          <a href="/#guide">48小时补证清单</a>
+        </div>
+      </section>
+
+      <!-- 11 每日榜 -->
+      <section class="block" id="rank">
+        <div class="block-head">
+          <div class="kicker">每日榜</div>
+          <h2>第312期当前排名（截至11月8日21时）</h2>
+        </div>
+        <ol class="rank">
+          <li><span class="no">1</span><span>同城装修报价单三源比对</span><span class="rv">总分 <b>86.5</b> · A级</span></li>
+          <li><span class="no">2</span><span>奶茶加盟招商话术录音</span><span class="rv">总分 <b>84.0</b> · A级</span></li>
+          <li><span class="no">3</span><span>健身房闭店前七天续卡促销</span><span class="rv">总分 <b>82.5</b> · A级</span></li>
+          <li><span class="no">4</span><span>租房合同违约金的两个比例</span><span class="rv">总分 <b>79.5</b> · A级</span></li>
+          <li><span class="no">5</span><span>同一岗位在三个平台的底薪写法</span><span class="rv">总分 <b>74.0</b> · B级</span></li>
+          <li><span class="no">6</span><span>宠物寄养条款的总部模板说</span><span class="rv">总分 <b>71.5</b> · B级</span></li>
+          <li><span class="no">7</span><span>二手相机验机视频与快门数争议</span><span class="rv">待核实 · 暂列</span></li>
+        </ol>
+      </section>
+
+      <!-- 12 投稿互动 -->
+      <section class="block" id="submit">
+        <div class="submit">
+          <div>
+            <h2>手上有报价单、录音或合同截图？</h2>
+            <p>按材料类型提交：合同与报价单走文件投递，录音需附时长与场景说明，截图保留原始文件。提交后会收到入池编号，48小时内可查看核实状态。当事方回应无论是否定还是拒答，都请一并记录时间和方式。</p>
+          </div>
+          <div class="submit-actions">
+            <a class="btn-main" href="/#guide">看投递要求</a>
+            <a class="btn-line" href="/#faq">先读常见问题</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右辅助栏 -->
+    <aside class="side-right">
+      <div class="panel">
+        <h3>11月8日热度前六</h3>
+        <div class="hotlist">
+          <a href="/#picks"><i>01</i><span>装修报价单三源比对</span></a>
+          <a href="/#picks"><i>02</i><span>奶茶加盟回本周期录音</span></a>
+          <a href="/#picks"><i>03</i><span>健身房闭店续卡促销</span></a>
+          <a href="/#picks"><i>04</i><span>租房违约金两处冲突</span></a>
+          <a href="/#picks"><i>05</i><span>三平台JD底薪写法</span></a>
+          <a href="/#picks"><i>06</i><span>二手相机快门数争议</span></a>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>条目更新流</h3>
+        <ul class="updatelist">
+          <li><span>装修报价单升至第一</span><time>20:41</time></li>
+          <li><span>相机条目退回待核实</span><time>17:12</time></li>
+          <li><span>招聘JD进入评审中</span><time>14:05</time></li>
+          <li><span>加盟录音改为已核实</span><time>11:33</time></li>
+          <li><span>第312期开榜18条</span><time>09:02</time></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>评审规则速记</h3>
+        <p class="mininote">来源可核验40分 · 时间线25分 · 当事人回应20分 · 表述克制15分。低于60分出榜，48小时内可补证两次。</p>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- 页脚 -->
+<footer>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-brand">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#241d33"/>
+          <path d="M18 44 L32 16 L46 44 Z" fill="none" stroke="#f2b544" stroke-width="4" stroke-linejoin="round"/>
+          <circle cx="32" cy="36" r="4" fill="#f2b544"/>
+        </svg>
+        <strong>五一黑料社每日大赛</strong>
+      </div>
+      <p class="foot-desc">覆盖2026年9月至11月的312期赛程，条目类型以报价单、录音、合同截图、聊天记录为主，每日9时开榜、21时定榜，待核实条目48小时内补证。</p>
+    </div>
+    <div class="foot-col">
+      <h4>选题方向</h4>
+      <a href="/#cats">同城服务报价</a>
+      <a href="/#cats">加盟招商话术</a>
+      <a href="/#cats">招聘承诺差异</a>
+      <a href="/#cats">二手交易纠纷</a>
+      <a href="/#cats">租房合同细节</a>
+    </div>
+    <div class="foot-col">
+      <h4>赛事页面</h4>
+      <a href="/#picks">今日精选</a>
+      <a href="/#rank">每日榜</a>
+      <a href="/#feed">赛程动态</a>
+      <a href="/#deep">评审拆解</a>
+      <a href="/#guide">参赛路径</a>
+    </div>
+    <div class="foot-col">
+      <h4>参与与说明</h4>
+      <a href="/#submit">投稿入口</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">参赛者说</a>
+      <a href="/#news">爆料资讯</a>
+      <a href="/#related">相关推荐</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>页面内容为赛事示例条目，涉及机构与人物均为化名，材料描述不构成事实认定。</span>
+    <span>最近更新：2026年11月8日 21时06分 · 对应第312期榜单</span>
+  </div>
+</footer>
+
+<button class="totop" id="totop" aria-label="回到顶部">
+  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 14 12 8 18 14"/></svg>
+</button>
+
+<script>
+(function(){
+  var mask=document.getElementById('mask'),
+      drawer=document.getElementById('drawer'),
+      burger=document.getElementById('burger'),
+      drawerClose=document.getElementById('drawerClose');
+
+  function openDrawer(){
+    drawer.classList.add('open');mask.classList.add('open');
+    burger.setAttribute('aria-expanded','true');
+    drawerClose.focus();
+  }
+  function closeDrawer(){
+    drawer.classList.remove('open');mask.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+  }
+  burger.addEventListener('click',openDrawer);
+  drawerClose.addEventListener('click',closeDrawer);
+  mask.addEventListener('click',closeDrawer);
+  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeDrawer);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){closeDrawer();}
+  });
+
+  // 回到顶部
+  var totop=document.getElementById('totop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>window.innerHeight*0.9){totop.classList.add('show');}
+    else{totop.classList.remove('show');}
+  },{passive:true});
+  totop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  // 导航高亮
+  var navLinks=document.querySelectorAll('.mainnav a');
+  var sections=[].slice.call(navLinks).map(function(a){
+    var id=a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  }).filter(Boolean);
+  function syncNav(){
+    var pos=window.scrollY+140,cur=null;
+    sections.forEach(function(s){ if(s.offsetTop<=pos) cur=s.id; });
+    navLinks.forEach(function(a){
+      var id=a.getAttribute('href').replace('/#','');
+      a.classList.toggle('on',id===cur);
+    });
+  }
+  window.addEventListener('scroll',syncNav,{passive:true});
+  syncNav();
+
+  // 分类筛选
+  var filters=document.querySelectorAll('#filters button');
+  var cats=[].slice.call(document.querySelectorAll('#catGrid .cat'));
+  var noresult=document.getElementById('noresult');
+  filters.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      filters.forEach(function(b){b.classList.remove('on');});
+      btn.classList.add('on');
+      var cat=btn.getAttribute('data-cat');
+      var shown=0;
+      cats.forEach(function(c){
+        var ok=(cat==='all')||(c.getAttribute('data-cat')===cat);
+        c.style.display=ok?'':'none';
+        if(ok) shown++;
+      });
+      noresult.classList.toggle('show',shown===0);
+    });
+  });
+
+  // 搜索筛选（卡片 + 分类）
+  var q=document.getElementById('q');
+  var cards=[].slice.call(document.querySelectorAll('#picks .card'));
+  q.addEventListener('input',function(){
+    var kw=q.value.trim().toLowerCase();
+    cards.forEach(function(c){
+      var txt=c.textContent.toLowerCase();
+      c.style.display=(!kw||txt.indexOf(kw)>-1)?'':'none';
+    });
+    cats.forEach(function(c){
+      var txt=(c.textContent||'').toLowerCase();
+      c.style.display=(!kw||txt.indexOf(kw)>-1)?'':'none';
+    });
+  });
+
+  // 投稿按钮
+  var toSubmit=document.getElementById('toSubmit');
+  if(toSubmit){
+    toSubmit.addEventListener('click',function(){
+      document.getElementById('submit').scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  }
+})();
+</script>
+</body>
+                                                                                   </html>
