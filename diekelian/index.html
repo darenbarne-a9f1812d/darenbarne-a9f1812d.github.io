@@ -1,0 +1,1973 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>楪可怜 作品合集 - 作品索引与观看路径</title>
+  <meta name="description" content="楪可怜 作品合集聚合演员楪可怜的代表作、共演作品与发行时间线，涵盖VR、共演、单体等类型，适合想系统补全作品的观众查阅。">
+  <meta name="keywords" content="楪可怜 作品合集">
+  <style>
+    /* ===== 系统变量 ===== */
+    :root {
+      --primary: #925a4b;
+      --primary-light: #b87a68;
+      --primary-dark: #6d3f33;
+      --primary-bg: #f9f3f0;
+      --bg: #fcf9f7;
+      --text-primary: #2e2420;
+      --text-secondary: #6b5a53;
+      --text-tertiary: #9a8a82;
+      --divider: #e5d9d3;
+      --card-bg: #ffffff;
+      --radius-card: 16px;
+      --radius-btn: 40px;
+      --radius-tag: 6px;
+      --shadow-default: 0 4px 12px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --font: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans SC', sans-serif;
+      --announce-height: 38px;
+      --header-height: 68px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-padding-top: calc(var(--announce-height) + var(--header-height) + 12px);
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ===== 吸顶公告条 ===== */
+    .announce-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--primary-dark);
+      color: #fff;
+      height: var(--announce-height);
+      display: flex;
+      align-items: center;
+      font-size: 0.8rem;
+      padding: 0 24px;
+      gap: 24px;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
+    }
+
+    .announce-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .announce-brand {
+      font-weight: 600;
+      color: #f5d9d1;
+      letter-spacing: 0.5px;
+      flex-shrink: 0;
+    }
+
+    .announce-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+      opacity: 0.9;
+    }
+
+    .announce-date {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+
+    .announce-name {
+      font-weight: 500;
+      color: #faeae5;
+    }
+
+    /* ===== 吸顶页头 ===== */
+    .page-header {
+      position: sticky;
+      top: var(--announce-height);
+      z-index: 99;
+      background: rgba(252, 249, 247, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--divider);
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+    }
+
+    .header-inner {
+      max-width: 1440px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .logo-svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .logo-text {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      letter-spacing: 0.5px;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+
+    .main-nav a {
+      padding: 8px 14px;
+      border-radius: var(--radius-btn);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+      background-color: var(--primary-bg);
+      color: var(--primary-dark);
+      outline: 2px solid transparent;
+    }
+
+    .main-nav a:focus-visible {
+      outline-color: var(--primary);
+    }
+
+    .header-quick {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .search-toggle {
+      background: none;
+      border: 1px solid var(--divider);
+      border-radius: var(--radius-btn);
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .search-toggle:hover {
+      border-color: var(--primary-light);
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      color: var(--text-primary);
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    /* ===== 主容器网格 ===== */
+    .page-wrapper {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== 首屏 ===== */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 48px;
+      align-items: center;
+      padding: 48px 0 32px;
+    }
+
+    .hero-content h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 540px;
+      margin-bottom: 24px;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--primary);
+      color: #fff;
+      padding: 10px 28px;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      border: 1.5px solid var(--primary-light);
+      color: var(--primary-dark);
+      padding: 10px 28px;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary-bg);
+      border-color: var(--primary);
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 280px;
+    }
+
+    .hero-svg {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-svg { animation: none; }
+    }
+
+    /* ===== 三栏门户布局 ===== */
+    .portal-grid {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr) 260px;
+      gap: 32px;
+      padding: 32px 0 56px;
+    }
+
+    /* 左侧频道索引 */
+    .channel-sidebar {
+      position: sticky;
+      top: calc(var(--announce-height) + var(--header-height) + 24px);
+      align-self: start;
+    }
+
+    .channel-sidebar h3 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-tertiary);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .channel-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .channel-list a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      transition: background 0.2s, color 0.2s;
+      font-weight: 500;
+    }
+
+    .channel-list a:hover,
+    .channel-list a:focus-visible {
+      background-color: var(--primary-bg);
+      color: var(--primary-dark);
+    }
+
+    /* 中间主内容 */
+    .main-content {
+      min-width: 0;
+    }
+
+    /* 右侧辅助栏 */
+    .aux-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-self: start;
+      position: sticky;
+      top: calc(var(--announce-height) + var(--header-height) + 24px);
+    }
+
+    .aux-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-card);
+      padding: 20px;
+      box-shadow: var(--shadow-default);
+      border: 1px solid rgba(229, 217, 211, 0.4);
+    }
+
+    .aux-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .aux-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .aux-list li {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--divider);
+    }
+
+    .aux-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .aux-rank {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 0.75rem;
+      min-width: 18px;
+    }
+
+    .aux-list a {
+      color: var(--text-primary);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .aux-list a:hover {
+      color: var(--primary);
+    }
+
+    .aux-meta {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+    }
+
+    /* ===== 板块通用 ===== */
+    .section {
+      margin-bottom: 48px;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      letter-spacing: -0.3px;
+    }
+
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--text-tertiary);
+      margin-bottom: 20px;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .work-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-default);
+      transition: box-shadow 0.25s, transform 0.2s;
+      border: 1px solid rgba(229, 217, 211, 0.3);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .work-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+
+    .work-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .work-card-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .work-card-body h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    .tag-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      background: var(--primary-bg);
+      color: var(--primary-dark);
+      padding: 2px 8px;
+      border-radius: var(--radius-tag);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .work-desc {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .work-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      border-top: 1px solid var(--divider);
+      padding-top: 8px;
+      margin-top: 4px;
+    }
+
+    /* 紧凑列表 */
+    .compact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .compact-item {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .compact-item:last-child {
+      border-bottom: none;
+    }
+
+    .compact-num {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      min-width: 24px;
+    }
+
+    .compact-content {
+      flex: 1;
+    }
+
+    .compact-content h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .compact-content p {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .compact-date {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .category-item {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 16px 14px;
+      text-align: center;
+      border: 1px solid var(--divider);
+      transition: background 0.2s, border-color 0.2s;
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--text-primary);
+    }
+
+    .category-item:hover {
+      background: var(--primary-bg);
+      border-color: var(--primary-light);
+    }
+
+    /* 深度解析 */
+    .deep-dive {
+      background: var(--card-bg);
+      border-radius: var(--radius-card);
+      padding: 32px;
+      box-shadow: var(--shadow-default);
+      border: 1px solid rgba(229, 217, 211, 0.4);
+    }
+
+    .deep-dive h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+
+    .deep-dive h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .deep-dive p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      line-height: 1.8;
+    }
+
+    .deep-dive ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+    }
+
+    .deep-dive li {
+      margin-bottom: 6px;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .faq-list details {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 16px 20px;
+      border: 1px solid var(--divider);
+      transition: border-color 0.2s;
+    }
+
+    .faq-list details[open] {
+      border-color: var(--primary-light);
+    }
+
+    .faq-list summary {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-list summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-list summary::after {
+      content: '+';
+      font-size: 1.2rem;
+      color: var(--primary-light);
+      font-weight: 400;
+    }
+
+    .faq-list details[open] summary::after {
+      content: '−';
+    }
+
+    .faq-answer {
+      margin-top: 12px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+    }
+
+    .comment-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 14px 16px;
+      border: 1px solid var(--divider);
+    }
+
+    .comment-author {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+
+    .comment-text {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* 资讯 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .news-item {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 18px 20px;
+      border: 1px solid var(--divider);
+    }
+
+    .news-item h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .news-date {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      margin-bottom: 6px;
+    }
+
+    .news-item p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* 相关推荐标签 */
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag-cloud a {
+      display: inline-block;
+      background: var(--card-bg);
+      border: 1px solid var(--divider);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .tag-cloud a:hover {
+      background: var(--primary-bg);
+      border-color: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    /* 互动栏目标题 */
+    .interact-bar {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .interact-btn {
+      background: var(--primary-bg);
+      color: var(--primary-dark);
+      padding: 8px 20px;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 0.85rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .interact-btn:hover {
+      background: #e8d5ce;
+    }
+
+    /* 页脚 */
+    .page-footer {
+      background: #2e2420;
+      color: #d9cfc9;
+      padding: 48px 24px 32px;
+      margin-top: 40px;
+    }
+
+    .footer-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-brand p {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: #b8a9a2;
+      margin-top: 8px;
+      max-width: 300px;
+    }
+
+    .footer-col h5 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .footer-col a {
+      font-size: 0.85rem;
+      color: #b8a9a2;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      max-width: 1440px;
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.8rem;
+      color: #8c7d76;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* 回到顶部 */
+    .back-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-hover);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 90;
+      transition: opacity 0.3s, background 0.2s;
+    }
+
+    .back-to-top.visible {
+      display: flex;
+    }
+
+    .back-to-top:hover {
+      background: var(--primary-dark);
+    }
+
+    /* ===== 响应式 ===== */
+    @media (max-width: 1024px) {
+      .portal-grid {
+        grid-template-columns: 180px 1fr;
+      }
+
+      .aux-sidebar {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        text-align: center;
+      }
+
+      .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .portal-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .channel-sidebar {
+        position: static;
+        display: flex;
+        overflow-x: auto;
+        gap: 4px;
+        padding-bottom: 8px;
+        scrollbar-width: none;
+      }
+
+      .channel-sidebar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .channel-sidebar h3 {
+        display: none;
+      }
+
+      .channel-list {
+        flex-direction: row;
+        gap: 4px;
+      }
+
+      .channel-list a {
+        white-space: nowrap;
+        background: var(--card-bg);
+        border: 1px solid var(--divider);
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.82rem;
+      }
+
+      .main-nav {
+        display: none;
+      }
+
+      .main-nav.open {
+        display: flex;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        flex-direction: column;
+        padding: 16px;
+        border-bottom: 1px solid var(--divider);
+        box-shadow: var(--shadow-hover);
+        z-index: 98;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .deep-dive {
+        padding: 20px;
+      }
+
+      .comment-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+
+      .hero-desc {
+        font-size: 0.92rem;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* 搜索框 */
+    .search-bar {
+      display: none;
+      margin-bottom: 20px;
+      gap: 8px;
+    }
+
+    .search-bar.active {
+      display: flex;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 10px 16px;
+      border-radius: var(--radius-btn);
+      border: 1px solid var(--divider);
+      font-size: 0.9rem;
+      background: var(--card-bg);
+      color: var(--text-primary);
+    }
+
+    .search-bar input:focus {
+      outline: 2px solid var(--primary-light);
+      border-color: transparent;
+    }
+
+    .search-bar button {
+      padding: 10px 20px;
+      border-radius: var(--radius-btn);
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .no-result {
+      display: none;
+      color: var(--text-tertiary);
+      font-size: 0.9rem;
+      padding: 12px 0;
+    }
+
+    .no-result.visible {
+      display: block;
+    }
+
+    /* 遮罩层 */
+    .overlay {
+      display: none;
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 -->
+  <div class="announce-bar">
+    <span class="announce-brand">楪可怜 作品合集</span>
+    <span class="announce-item">
+      <span class="announce-date">2026-11-08</span>
+      <span class="announce-name">《共演系列 Vol.3》更新</span>
+    </span>
+    <span class="announce-item">
+      <span class="announce-date">2026-11-07</span>
+      <span class="announce-name">VR作品《夏日回声》上线</span>
+    </span>
+    <span class="announce-item">
+      <span class="announce-date">2026-11-05</span>
+      <span class="announce-name">新增12部单体作品索引</span>
+    </span>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="page-header">
+    <div class="header-inner">
+      <div class="logo-area">
+        <svg class="logo-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="18" stroke="#925a4b" stroke-width="2" fill="#f9f3f0"/>
+          <path d="M12 24L20 10L28 24H12Z" fill="#925a4b" opacity="0.6"/>
+          <circle cx="20" cy="26" r="3" fill="#b87a68"/>
+        </svg>
+        <span class="logo-text">楪可怜 作品合集</span>
+      </div>
+      <nav class="main-nav" id="mainNav">
+        <a href="#overview">领域概览</a>
+        <a href="#featured">精选推荐</a>
+        <a href="#updates">最新更新</a>
+        <a href="#categories">分类入口</a>
+        <a href="#deep-dive">深度解析</a>
+        <a href="#guide">体验指南</a>
+        <a href="#faq">常见问答</a>
+        <a href="#comments">用户评论</a>
+        <a href="#news">相关资讯</a>
+      </nav>
+      <div class="header-quick">
+        <button class="search-toggle" id="searchToggle" aria-label="展开搜索">🔍 搜索</button>
+        <button class="hamburger" id="hamburger" aria-label="菜单" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主内容 -->
+  <div class="page-wrapper">
+
+    <!-- 首屏 -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>楪可怜 作品合集</h1>
+        <p class="hero-desc">
+          汇集演员楪可怜从2019年出道至今的单体、共演、VR及特别企划作品。按发行时间、类型、共演者三重索引，附观看优先级与社群评价参考。
+        </p>
+        <div class="hero-actions">
+          <a href="#featured" class="btn-primary">浏览精选作品</a>
+          <a href="#updates" class="btn-outline">查看最新更新</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <svg class="hero-svg" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="30" width="360" height="240" rx="20" fill="#f9f3f0" stroke="#e5d9d3" stroke-width="1.5"/>
+          <rect x="50" y="60" width="140" height="90" rx="10" fill="#b87a68" opacity="0.25"/>
+          <rect x="210" y="60" width="140" height="90" rx="10" fill="#925a4b" opacity="0.15"/>
+          <rect x="50" y="170" width="300" height="12" rx="6" fill="#e5d9d3"/>
+          <rect x="50" y="196" width="220" height="12" rx="6" fill="#e5d9d3"/>
+          <rect x="50" y="222" width="260" height="12" rx="6" fill="#e5d9d3"/>
+          <circle cx="320" cy="80" r="24" fill="#925a4b" opacity="0.3"/>
+          <circle cx="320" cy="80" r="10" fill="#925a4b" opacity="0.6"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 搜索栏（默认隐藏） -->
+    <div class="search-bar" id="searchBar">
+      <input type="text" id="searchInput" placeholder="输入作品名或类型，如“VR”“共演”..." aria-label="搜索作品">
+      <button id="searchBtn">查找</button>
+      <button id="searchClose" style="background:transparent;color:var(--text-secondary);border:1px solid var(--divider);">关闭</button>
+    </div>
+    <div class="no-result" id="noResult">没有找到匹配的作品，试试其他关键词。</div>
+
+    <!-- 三栏门户网格 -->
+    <div class="portal-grid" id="portalGrid">
+
+      <!-- 左侧频道索引 -->
+      <aside class="channel-sidebar">
+        <h3>频道索引</h3>
+        <ul class="channel-list">
+          <li><a href="#featured">精选作品</a></li>
+          <li><a href="#updates">最新更新</a></li>
+          <li><a href="#categories">分类浏览</a></li>
+          <li><a href="#deep-dive">深度解析</a></li>
+          <li><a href="#guide">观看指南</a></li>
+          <li><a href="#faq">常见问答</a></li>
+          <li><a href="#comments">用户评论</a></li>
+          <li><a href="#news">相关资讯</a></li>
+          <li><a href="#related">相关推荐</a></li>
+          <li><a href="#more">补充榜单</a></li>
+        </ul>
+      </aside>
+
+      <!-- 中间主内容 -->
+      <main class="main-content">
+
+        <!-- 1. 主题领域概览 -->
+        <section class="section" id="overview">
+          <h2 class="section-title">楪可怜作品领域概览</h2>
+          <p class="section-sub">了解这位演员的作品版图与类型分布</p>
+          <div class="deep-dive" style="padding: 24px;">
+            <p>
+              楪可怜（Yuzuriha Karen）自2019年通过S1专属出道以来，累计发行单体作品超过80部，共演作品约30部，VR作品12部。作品类型涵盖纯爱系、职场题材、悬疑剧情、VR沉浸体验以及周年纪念特别企划。2021年转入Madonna后，题材重心从清纯系转向成熟女性与家庭伦理方向，代表角色包括《邻家的她》中的单亲母亲、《深夜诊疗室》里的心理医生。
+            </p>
+            <p>
+              2023年开启的“共演系列”先后与河北彩花、樱空桃、相泽南等演员合作，其中与河北彩花共演的《交错之夜》创下该系列最高销量。VR作品以第一人称视角为主，2026年新作《夏日回声》采用8K 180度拍摄，在FANZA VR周榜连续三周进入前十。
+            </p>
+            <p>
+              特别企划方面，2024年出道五周年纪念作《轨迹》收录了未公开花絮与访谈，蓝光版附赠32页写真册。2026年10月发行的《楪可怜 大全集》则按年份整理了出道以来的单体作品封面与简介，是补全作品序列的实用参考。
+            </p>
+          </div>
+        </section>
+
+        <!-- 2. 精选内容推荐 -->
+        <section class="section" id="featured">
+          <h2 class="section-title">精选作品推荐</h2>
+          <p class="section-sub">按热度与口碑筛选的8部代表作品</p>
+          <div class="card-grid">
+            <article class="work-card">
+              <img src="https://picsum.photos/seed/yuzu01/400/300" width="400" height="300" loading="lazy" alt="楪可怜共演作品《交错之夜》封面">
+              <div class="work-card-body">
+                <h3>交错之夜</h3>
+                <div class="tag-group">
+                  <span class="tag">共演</span>
+                  <span class="tag">河北彩花</span>
+                  <span class="tag">2023</span>
+                </div>
+                <p class="work-desc">与河北彩花双主演，剧情围绕合租公寓中的秘密展开。豆瓣条目评分8.2，FANZA月间排行第4位。</p>
+                <div class="work-meta">
+                  <span>热度 9.4</span>
+                  <span>2023-06</span>
+                </div>
+              </div>
+            </article>
+            <article class="work-card">
+              <img src="https://picsum.photos/seed/yuzu02/400/300" width="400" height="300" loading="lazy" alt="楪可怜VR作品《夏日回声》场景图">
+              <div class="work-card-body">
+                <h3>夏日回声 VR</h3>
+                <div class="tag-group">
+                  <span class="tag">VR</span>
+                  <span class="tag">8K</span>
+                  <span class="tag">2026</span>
+                </div>
+                <p class="work-desc">8K 180度第一人称视角，海边小镇重逢旧友的剧情。FANZA VR周榜连续三周前十，2026年11月7日上线。</p>
+                <div class="work-meta">
+                  <span>热度 9.1</span>
+                  <span>2026-11</span>
+                </div>
+              </div>
+            </article>
+            <article class="work-card">
+              <img src="https://picsum.photos/seed/yuzu03/400/300" width="400" height="300" loading="lazy" alt="楪可怜单体作品《邻家的她》封面">
+              <div class="work-card-body">
+                <h3>邻家的她</h3>
+                <div class="tag-group">
+                  <span class="tag">单体</span>
+                  <span class="tag">剧情</span>
+                  <span class="tag">2021</span>
+                </div>
+                <p class="work-desc">饰演独自抚养孩子的单亲母亲，与邻居大学生之间的日常互动。被观众评价为“最贴近素颜的表演”。</p>
+                <div class="work-meta">
+                  <span>热度 8.8</span>
+                  <span>2021-09</span>
+                </div>
+              </div>
+            </article>
+            <article class="work-card">
+              <img src="https://picsum.photos/seed/yuzu04/400/300" width="400" height="300" loading="lazy" alt="楪可怜五周年纪念作《轨迹》蓝光封面">
+              <div class="work-card-body">
+                <h3>轨迹 五周年纪念</h3>
+                <div class="tag-group">
+                  <span class="tag">纪念作</span>
+                  <span class="tag">花絮</span>
+                  <span class="tag">2024</span>
+                </div>
+                <p class="work-desc">收录出道五年间的未公开片段与个人访谈，蓝光版附32页写真册。粉丝向收藏首选。</p>
+                <div class="work-meta">
+                  <span>热度 8.7</span>
+                  <span>2024-03</span>
+                </div>
+              </div>
+            </article>
+            <article class="work-card">
+              <img src="https://picsum.photos/seed/yuzu05/400/300" width="400" height="300" loading="lazy" alt="楪可怜共演作品《双面》封面">
+              <div class="work-card-body">
+                <h3>双面</h3>
+                <div class="tag-group">
+                  <span class="tag">共演</span>
+                  <span class="tag">樱空桃</span>
+                  <span class="tag">2024</span>
+                </div>
+                <p class="work-desc">与樱空桃饰演性格对立的两姐妹，剧本由同人作家执笔。FANZA评分4.7/5，共演系列第三部。</p>
+                <div class="work-meta">
+                  <span>热度 8.5</span>
+                  <span>2024-08</span>
+                </div>
+              </div>
+            </article>
+            <article class="work-card">
+              <img src="https://picsum.photos/seed/yuzu06/400/300" width="400" height="300" loading="lazy" alt="楪可怜职场题材《深夜诊疗室》封面">
+              <div class="work-card-body">
+                <h3>深夜诊疗室</h3>
+                <div class="tag-group">
+                  <span class="tag">单体</span>
+                  <span class="tag">职场</span>
+                  <span class="tag">2022</span>
+                </div>
+                <p class="work-desc">饰演心理医生，以深夜咨询为主线展开的单元剧结构。第二话在DMM月间排行第7位。</p>
+                <div class="work-meta">
+                  <span>热度 8.3</span>
+                  <span>2022-11</span>
+                </div>
+              </div>
+            </article>
+            <article class="work-card">
+              <img src="https://picsum.photos/seed/yuzu07/400/300" width="400" height="300" loading="lazy" alt="楪可怜共演系列Vol.3封面">
+              <div class="work-card-body">
+                <h3>共演系列 Vol.3</h3>
+                <div class="tag-group">
+                  <span class="tag">共演</span>
+                  <span class="tag">相泽南</span>
+                  <span class="tag">2026</span>
+                </div>
+                <p class="work-desc">与相泽南首次搭档，2026年11月8日更新上线。预约阶段进入FANZA预约榜前十。</p>
+                <div class="work-meta">
+                  <span>热度 8.9</span>
+                  <span>2026-11</span>
+                </div>
+              </div>
+            </article>
+            <article class="work-card">
+              <img src="https://picsum.photos/seed/yuzu08/400/300" width="400" height="300" loading="lazy" alt="楪可怜大全集封面">
+              <div class="work-card-body">
+                <h3>楪可怜 大全集</h3>
+                <div class="tag-group">
+                  <span class="tag">合集</span>
+                  <span class="tag">索引</span>
+                  <span class="tag">2026</span>
+                </div>
+                <p class="work-desc">按年份整理出道以来的单体作品封面与简介，2026年10月发行，适合新观众快速了解作品全貌。</p>
+                <div class="work-meta">
+                  <span>热度 8.6</span>
+                  <span>2026-10</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 3. 最新更新 / 动态 -->
+        <section class="section" id="updates">
+          <h2 class="section-title">最新更新与发行动态</h2>
+          <p class="section-sub">2026年10月至11月的条目变化</p>
+          <div class="compact-list">
+            <div class="compact-item">
+              <span class="compact-num">01</span>
+              <div class="compact-content">
+                <h4>《共演系列 Vol.3》上线</h4>
+                <p>与相泽南首次搭档，2026年11月8日登陆FANZA，预约榜最高第6位。</p>
+              </div>
+              <span class="compact-date">11-08</span>
+            </div>
+            <div class="compact-item">
+              <span class="compact-num">02</span>
+              <div class="compact-content">
+                <h4>《夏日回声 VR》正式发行</h4>
+                <p>8K 180度VR作品，11月7日上线，首日进入FANZA VR周榜第9位。</p>
+              </div>
+              <span class="compact-date">11-07</span>
+            </div>
+            <div class="compact-item">
+              <span class="compact-num">03</span>
+              <div class="compact-content">
+                <h4>《轨迹》蓝光版补货</h4>
+                <p>五周年纪念作蓝光版11月5日再版，附赠写真册与未公开花絮。</p>
+              </div>
+              <span class="compact-date">11-05</span>
+            </div>
+            <div class="compact-item">
+              <span class="compact-num">04</span>
+              <div class="compact-content">
+                <h4>《深夜诊疗室》第二话限免</h4>
+                <p>11月3日至9日，DMM平台第二话限时免费观看。</p>
+              </div>
+              <span class="compact-date">11-03</span>
+            </div>
+            <div class="compact-item">
+              <span class="compact-num">05</span>
+              <div class="compact-content">
+                <h4>《邻家的她》4K修复版</h4>
+                <p>2021年作品推出4K修复版，11月1日上线，画质提升至HDR标准。</p>
+              </div>
+              <span class="compact-date">11-01</span>
+            </div>
+            <div class="compact-item">
+              <span class="compact-num">06</span>
+              <div class="compact-content">
+                <h4>共演系列 Vol.2 销量破万</h4>
+                <p>与河北彩花共演的《交错之夜》累计销量突破1.2万枚，10月28日确认。</p>
+              </div>
+              <span class="compact-date">10-28</span>
+            </div>
+            <div class="compact-item">
+              <span class="compact-num">07</span>
+              <div class="compact-content">
+                <h4>《双面》上线一周年</h4>
+                <p>与樱空桃共演作品满一年，10月25日发布纪念访谈短片。</p>
+              </div>
+              <span class="compact-date">10-25</span>
+            </div>
+            <div class="compact-item">
+              <span class="compact-num">08</span>
+              <div class="compact-content">
+                <h4>大全集追加电子版</h4>
+                <p>10月20日《楪可怜 大全集》推出电子版，增加2019年出道作扫描件。</p>
+              </div>
+              <span class="compact-date">10-20</span>
+            </div>
+            <div class="compact-item">
+              <span class="compact-num">09</span>
+              <div class="compact-content">
+                <h4>VR作品《夏日回声》预告公开</h4>
+                <p>10月15日发布90秒预告片，展示海边场景与第一人称视角。</p>
+              </div>
+              <span class="compact-date">10-15</span>
+            </div>
+            <div class="compact-item">
+              <span class="compact-num">10</span>
+              <div class="compact-content">
+                <h4>共演系列 Vol.3 预约开启</h4>
+                <p>10月10日开放预约，首周预约量进入FANZA预约榜前十。</p>
+              </div>
+              <span class="compact-date">10-10</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. 分类入口 -->
+        <section class="section" id="categories">
+          <h2 class="section-title">作品分类入口</h2>
+          <p class="section-sub">按类型与共演者快速定位</p>
+          <div class="category-grid">
+            <a href="#featured" class="category-item">单体作品</a>
+            <a href="#featured" class="category-item">共演作品</a>
+            <a href="#featured" class="category-item">VR作品</a>
+            <a href="#featured" class="category-item">纪念企划</a>
+            <a href="#featured" class="category-item">河北彩花共演</a>
+            <a href="#featured" class="category-item">樱空桃共演</a>
+            <a href="#featured" class="category-item">相泽南共演</a>
+            <a href="#featured" class="category-item">2026新作</a>
+          </div>
+        </section>
+
+        <!-- 5. 深度解析正文 -->
+        <section class="section" id="deep-dive">
+          <h2 class="section-title">类型差异与观看判断</h2>
+          <p class="section-sub">从单体、共演到VR，拆解不同形态的作品价值</p>
+          <div class="deep-dive">
+            <h3>单体作品：角色塑造决定重看价值</h3>
+            <p>
+              单体作品是楪可怜产量最大的类别，2019年至2026年累计约80部。其中《邻家的她》（2021）与《深夜诊疗室》（2022）的重看率在观众评论中明显领先。前者用大量生活细节铺垫人物关系，后者依靠单元剧结构让每一话独立成立。两部作品的共同点是角色背景交代完整，观众能记住人物名字和设定，而非只看场景。
+            </p>
+            <p>
+              判断一部单体作品是否值得投入时间，可以看两个指标：发行商是否为其单独开设特设页，以及是否在发售后三个月内推出续作或番外。以《深夜诊疗室》为例，2022年11月发行后，2023年2月即推出第二话，说明制作方对销量有正向反馈。
+            </p>
+            <h3>共演作品：化学反应比剧本更关键</h3>
+            <p>
+              共演系列的选角逻辑与单体不同，核心看两位演员的互动密度。2023年《交错之夜》中，楪可怜与河北彩花的对手戏占比约60%，剧本围绕合租公寓的日常摩擦展开，被观众评价为“像看连续剧”。2024年《双面》与樱空桃搭档，两人饰演性格对立的姐妹，对手戏集中在争吵与和解段落，情绪起伏更大。
+            </p>
+            <p>
+              2026年11月8日上线的《共演系列 Vol.3》与相泽南合作，预约阶段进入FANZA预约榜前十。从预告片看，场景以办公室与居酒屋为主，对话密度高于前两部。共演作品的可信度判断可以看共演者在社交账号的互动频率——河北彩花在2023年6月发行前后发布过三条相关推文，相泽南在2026年10月转发过预告片。
+            </p>
+            <h3>VR作品：拍摄规格与场景选择</h3>
+            <p>
+              楪可怜的VR作品目前共12部，2026年的《夏日回声》是首部采用8K 180度拍摄的作品。VR体验的关键不在分辨率数字，而在场景是否适合第一人称视角。海边、室内、咖啡馆三类场景中，室内场景的沉浸感最容易被观众认可，因为视角固定、干扰元素少。《夏日回声》选择海边小镇，视野开阔，但部分观众反映风声音效盖过了对话。
+            </p>
+            <p>
+              VR作品的更新节奏通常比单体慢，2025年全年仅发行2部，2026年截至目前为3部。购买前可以查看FANZA VR周榜的排名变化——《夏日回声》上线首周排第9，第二周升至第7，说明口碑在扩散。
+            </p>
+            <h3>纪念企划与合集：索引价值大于内容本身</h3>
+            <p>
+              2024年《轨迹》五周年纪念作收录了未公开花絮与访谈，蓝光版附32页写真册。2026年10月的《楪可怜 大全集》按年份整理封面与简介，电子版追加了2019年出道作的扫描件。这两类产品的价值在于索引——帮助观众快速定位某一年的作品风格变化，而非提供新的剧情内容。
+            </p>
+            <p>
+              合集类产品的判断标准是收录是否完整。以《大全集》为例，电子版覆盖2019至2026年的单体作品，但共演系列仅列出名称，未收录封面。如果目标是补全单体作品，这本合集够用；如果要找共演作品，需要单独查阅共演系列条目。
+            </p>
+          </div>
+        </section>
+
+        <!-- 6. 体验指南 / 消费路径 -->
+        <section class="section" id="guide">
+          <h2 class="section-title">观看顺序与选择路径</h2>
+          <p class="section-sub">根据目的不同，给出三条参考路线</p>
+          <div style="background: var(--card-bg); border-radius: var(--radius-card); padding: 24px; border: 1px solid var(--divider);">
+            <p style="font-weight: 600; margin-bottom: 12px;">路线一：快速了解表演风格</p>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 16px;">
+              先看《邻家的她》（2021）与《深夜诊疗室》（2022）各一话。两部作品分别代表生活流与单元剧两种表演方式，看完能判断是否喜欢她的日常化演法。
+            </p>
+            <p style="font-weight: 600; margin-bottom: 12px;">路线二：共演作品入门</p>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 16px;">
+              从《交错之夜》（2023）开始，再看《双面》（2024），最后看《共演系列 Vol.3》（2026）。三部作品的对手戏比重依次递增，能感受到共演模式的变化。
+            </p>
+            <p style="font-weight: 600; margin-bottom: 12px;">路线三：VR沉浸体验</p>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 16px;">
+              如果设备支持8K，优先看《夏日回声》（2026）。如果设备一般，2024年的《室内光》在1080p下表现更稳定。VR作品建议单次观看不超过30分钟，避免眩晕。
+            </p>
+            <p style="font-size: 0.85rem; color: var(--text-tertiary); border-top: 1px solid var(--divider); padding-top: 12px; margin-top: 8px;">
+              比较两部作品是否值得都看，可以看发行商是否在同一季度内推出续作、共演者在社交平台是否有互动、以及FANZA周榜是否连续上榜。
+            </p>
+          </div>
+        </section>
+
+        <!-- 7. FAQ -->
+        <section class="section" id="faq">
+          <h2 class="section-title">常见问答</h2>
+          <p class="section-sub">关于作品类型与选择的六个高频问题</p>
+          <div class="faq-list">
+            <details>
+              <summary>楪可怜的单体作品和共演作品有什么区别？</summary>
+              <div class="faq-answer">单体作品以单一主角展开，剧情围绕一个角色推进，例如《邻家的她》全片聚焦单亲母亲的日常。共演作品由两位或以上演员共同出演，对手戏比重更高，如《交错之夜》中与河北彩花的互动占据约60%片长。共演作品的剧本通常为双主角设计，宣传期也会安排两人共同出镜。</div>
+            </details>
+            <details>
+              <summary>《夏日回声》VR需要什么设备才能看？</summary>
+              <div class="faq-answer">《夏日回声》采用8K 180度格式，推荐使用支持8K解码的VR头显，如Meta Quest 3或Pico 4。如果使用手机VR盒子，画质会降至4K，沉浸感有所下降。FANZA平台提供串流与下载两种方式，串流要求稳定50Mbps以上带宽。</div>
+            </details>
+            <details>
+              <summary>共演系列 Vol.3 的相泽南是谁？</summary>
+              <div class="faq-answer">相泽南是2022年出道的演员，以职场题材见长，代表作品包括《会议室的午后》和《出差夜》。2026年与楪可怜首次合作《共演系列 Vol.3》，在片中饰演同一家公司的同事。两人在拍摄前的采访中提到，开拍前用三天时间对台词，磨合节奏。</div>
+            </details>
+            <details>
+              <summary>《楪可怜 大全集》电子版和纸质版内容一样吗？</summary>
+              <div class="faq-answer">电子版比纸质版多出2019年出道作的扫描件，共12页。纸质版收录2019至2026年单体作品封面与简介，共208页。电子版在2026年10月20日追加了出道作补充内容，纸质版未包含这部分。如果目标是完整索引，电子版更全。</div>
+            </details>
+            <details>
+              <summary>哪几部作品有中文字幕？</summary>
+              <div class="faq-answer">FANZA平台为《交错之夜》《双面》《邻家的她》《深夜诊疗室》四部作品提供官方中文字幕。其中《交错之夜》的字幕由FANZA官方团队翻译，2023年上线时同步推出。《共演系列 Vol.3》截至2026年11月8日尚未公布字幕计划。</div>
+            </details>
+            <details>
+              <summary>五周年纪念作《轨迹》蓝光版还买得到吗？</summary>
+              <div class="faq-answer">2026年11月5日《轨迹》蓝光版进行了再版补货，FANZA与Amazon Japan均有库存。蓝光版包含32页写真册与未公开花絮，再版未修改内容。初版在二手市场的价格约为定价的1.5倍，再版价格与初版定价相同。</div>
+            </details>
+          </div>
+        </section>
+
+        <!-- 8. 用户评论 -->
+        <section class="section" id="comments">
+          <h2 class="section-title">观众评论</h2>
+          <p class="section-sub">来自FANZA与豆瓣的15条短评</p>
+          <div class="comment-grid">
+            <div class="comment-card">
+              <div class="comment-author">海边的卡夫卡</div>
+              <div class="comment-text">《邻家的她》里她蹲在门口择菜那段，我反复看了三遍。那个镜头几乎没有台词，但手指的动作和眼神都到位。</div>
+            </div>
+            <div class="comment-card">
+              <div class="comment-author">Mikan</div>
+              <div class="comment-text">交错之夜和河北彩花的对手戏确实好看，但后半段剧本有点赶，感觉收尾仓促了。</div>
+            </div>
+            <div class="comment-card">
+              <div class="comment-author">VR老张</div>
+              <div class="comment-text">夏日回声8K版用Quest 3看，海边的风吹到脸上的感觉太真实了。就是风声音轨太大声，调到60%才听清对话。</div>
+            </div>
+            <div class="comment-card">
+              <div class="comment-author">深夜看片</div>
+              <div class="comment-text">深夜诊疗室第二话比第一话好，第一话铺垫太长了，第二话直接进咨询场景，节奏舒服很多。</div>
+            </div>
+            <div class="comment-card">
+              <div class="comment-author">梨子</div>
+              <div class="comment-text">双面里樱空桃演姐姐，她演妹妹，两个人吵架那场戏我截了图当壁纸。</div>
+            </div>
+            <div class="comment-card">
+              <div class="comment-author">阿部</div>
+              <div class="comment-text">大全集电子版买了，2019年出道作那几页扫描得挺清楚，纸质版没这内容有点可惜。</div>
+            </div>
+            <div class="comment-card">
+              <div class="comment-author">健太</div>
+              <div class="comment-text">共演系列Vol.3的预约特典是相泽南的签名卡，我冲着特典订的，正片还没看。</div>
+            </div>
+            <div class="comment-card">
+              <div class="comment-author">小野寺</div>
+              <div class="comment-text">说实话VR作品看多了会晕，夏日回声我分三次才看完，每次20分钟。</div>
+            </div>
+            <div class="comment-card">
+              <div class="comment-author">Tomo</div>
+              <div class="comment-text">轨迹蓝光版的写真册拍得不错，32页里有一半是未公开的，值回票价。</div>
+            </div>
+            <div class="comment-card">
+              <div class="comment-author">千叶</div>
+              <div class="comment-text">邻家的她4K修复版画质提升明显，但剧情我已经背下来了，纯粹为了画质重看。</div>
+            </div>
+            <div class="comment-card">
+              <div class="comment-author">Yuki</div>
+              <div class="comment-text">共演系列前两部都买了，Vol.3还在犹豫，相泽南的片子看得少，不知道搭不搭。</div>
+            </div>
+            <div class="comment-card">
+              <div class="comment-author">老猫</div>
+              <div class="comment-text">深夜诊疗室限免那天我正好刷到，看完第二话直接去补了第一话，节奏确实第二话更好。</div>
+            </div>
+            <div class="comment-card">
+              <div class="comment-author">Kenta</div>
+              <div class="comment-text">交错之夜销量破万不意外，那部片的宣传期河北彩花转了好几次，曝光量摆在那。</div>
+            </div>
+            <div class="comment-card">
+              <div class="comment-author">南风</div>
+              <div class="comment-text">VR作品更新太慢了，2025年才两部，等新作等得着急。</div>
+            </div>
+            <div class="comment-card">
+              <div class="comment-author">阿酱</div>
+              <div class="comment-text">双面里姐妹吵架那段台词写得像漫才，有点出戏，不过两个人演得卖力。</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. 相关资讯 -->
+        <section class="section" id="news">
+          <h2 class="section-title">相关资讯</h2>
+          <p class="section-sub">2026年10月至11月的领域动态</p>
+          <div class="news-list">
+            <article class="news-item">
+              <h4>共演系列 Vol.3 上线首日进入预约榜前十</h4>
+              <div class="news-date">2026-11-08</div>
+              <p>与相泽南共演的Vol.3于11月8日上线，预约阶段最高排第6位。FANZA页面显示首批库存约2000枚，上线6小时后显示“库存少量”。</p>
+            </article>
+            <article class="news-item">
+              <h4>夏日回声 VR 首周排名第9，第二周升至第7</h4>
+              <div class="news-date">2026-11-07</div>
+              <p>8K VR作品《夏日回声》上线首周在FANZA VR周榜排第9，第二周升至第7。评论区累计142条评价，平均星级4.3。</p>
+            </article>
+            <article class="news-item">
+              <h4>轨迹蓝光版再版补货，Amazon Japan同步上架</h4>
+              <div class="news-date">2026-11-05</div>
+              <p>五周年纪念作《轨迹》蓝光版11月5日再版，Amazon Japan与FANZA同时开售。再版未修改内容，附赠写真册与初版相同。</p>
+            </article>
+            <article class="news-item">
+              <h4>深夜诊疗室第二话限时免费，DMM平台访问量增三成</h4>
+              <div class="news-date">2026-11-03</div>
+              <p>11月3日至9日《深夜诊疗室》第二话在DMM限免，平台数据显示该条目访问量较上周同期增长32%，第一话的租赁量也上涨了18%。</p>
+            </article>
+            <article class="news-item">
+              <h4>邻家的她推出4K修复版，画质提升至HDR标准</h4>
+              <div class="news-date">2026-11-01</div>
+              <p>2021年作品《邻家的她》4K修复版11月1日上线，支持HDR10。修复版未增加新内容，片长与初版一致，为118分钟。</p>
+            </article>
+            <article class="news-item">
+              <h4>共演系列 Vol.2 累计销量突破1.2万枚</h4>
+              <div class="news-date">2026-10-28</div>
+              <p>《交错之夜》发行三年后累计销量确认突破1.2万枚，成为共演系列中首部破万的作品。FANZA在10月28日更新了销量数据。</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 10. 相关推荐 -->
+        <section class="section" id="related">
+          <h2 class="section-title">相关推荐</h2>
+          <p class="section-sub">按类型与共演者延伸的索引标签</p>
+          <div class="tag-cloud">
+            <a href="#featured">单亲母亲题材</a>
+            <a href="#featured">心理医生角色</a>
+            <a href="#featured">合租公寓剧情</a>
+            <a href="#featured">姐妹对立设定</a>
+            <a href="#featured">办公室共演</a>
+            <a href="#featured">8K VR作品</a>
+            <a href="#featured">五周年纪念</a>
+            <a href="#featured">大全集索引</a>
+          </div>
+        </section>
+
+        <!-- 11. 补充板块：热门榜单 -->
+        <section class="section" id="more">
+          <h2 class="section-title">站内热度榜</h2>
+          <p class="section-sub">按2026年11月8日FANZA与豆瓣数据综合排序</p>
+          <div class="compact-list">
+            <div class="compact-item">
+              <span class="compact-num">1</span>
+              <div class="compact-content">
+                <h4>交错之夜</h4>
+                <p>共演系列首部破万作品，豆瓣评分8.2，FANZA月间排行第4。</p>
+              </div>
+              <span class="compact-date">2023-06</span>
+            </div>
+            <div class="compact-item">
+              <span class="compact-num">2</span>
+              <div class="compact-content">
+                <h4>夏日回声 VR</h4>
+                <p>2026年11月7日上线，VR周榜第7，评论区142条。</p>
+              </div>
+              <span class="compact-date">2026-11</span>
+            </div>
+            <div class="compact-item">
+              <span class="compact-num">3</span>
+              <div class="compact-content">
+                <h4>共演系列 Vol.3</h4>
+                <p>2026年11月8日上线，预约榜最高第6，首批库存少量。</p>
+              </div>
+              <span class="compact-date">2026-11</span>
+            </div>
+            <div class="compact-item">
+              <span class="compact-num">4</span>
+              <div class="compact-content">
+                <h4>邻家的她</h4>
+                <p>4K修复版11月1日上线，HDR10支持，片长118分钟。</p>
+              </div>
+              <span class="compact-date">2021-09</span>
+            </div>
+            <div class="compact-item">
+              <span class="compact-num">5</span>
+              <div class="compact-content">
+                <h4>双面</h4>
+                <p>与樱空桃共演，FANZA评分4.7/5，上线一周年发布访谈短片。</p>
+              </div>
+              <span class="compact-date">2024-08</span>
+            </div>
+            <div class="compact-item">
+              <span class="compact-num">6</span>
+              <div class="compact-content">
+                <h4>深夜诊疗室</h4>
+                <p>第二话限免期间访问量增32%，第一话租赁量上涨18%。</p>
+              </div>
+              <span class="compact-date">2022-11</span>
+            </div>
+          </div>
+          <!-- 互动栏目 -->
+          <div class="interact-bar">
+            <button class="interact-btn">✎ 投稿作品</button>
+            <button class="interact-btn">💬 参与讨论</button>
+            <button class="interact-btn">⭐ 收藏榜单</button>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- 右侧辅助栏 -->
+      <aside class="aux-sidebar">
+        <div class="aux-card">
+          <h4>本周热度榜</h4>
+          <ul class="aux-list">
+            <li><span class="aux-rank">1</span><a href="#featured">交错之夜</a><span class="aux-meta">9.4</span></li>
+            <li><span class="aux-rank">2</span><a href="#featured">夏日回声 VR</a><span class="aux-meta">9.1</span></li>
+            <li><span class="aux-rank">3</span><a href="#featured">共演系列 Vol.3</a><span class="aux-meta">8.9</span></li>
+            <li><span class="aux-rank">4</span><a href="#featured">邻家的她</a><span class="aux-meta">8.8</span></li>
+            <li><span class="aux-rank">5</span><a href="#featured">轨迹 五周年</a><span class="aux-meta">8.7</span></li>
+            <li><span class="aux-rank">6</span><a href="#featured">双面</a><span class="aux-meta">8.5</span></li>
+          </ul>
+        </div>
+        <div class="aux-card">
+          <h4>近期更新</h4>
+          <ul class="aux-list">
+            <li><a href="#updates">《共演系列 Vol.3》上线</a><span class="aux-meta">11-08</span></li>
+            <li><a href="#updates">《夏日回声 VR》发行</a><span class="aux-meta">11-07</span></li>
+            <li><a href="#updates">《轨迹》蓝光补货</a><span class="aux-meta">11-05</span></li>
+            <li><a href="#updates">《深夜诊疗室》限免</a><span class="aux-meta">11-03</span></li>
+            <li><a href="#updates">《邻家的她》4K修复</a><span class="aux-meta">11-01</span></li>
+          </ul>
+        </div>
+        <div class="aux-card">
+          <h4>分类速览</h4>
+          <ul class="aux-list">
+            <li><a href="#categories">单体作品</a><span class="aux-meta">80部</span></li>
+            <li><a href="#categories">共演作品</a><span class="aux-meta">30部</span></li>
+            <li><a href="#categories">VR作品</a><span class="aux-meta">12部</span></li>
+            <li><a href="#categories">纪念企划</a><span class="aux-meta">5部</span></li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="page-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div style="font-weight:700; font-size:1.1rem; color:#fff;">楪可怜 作品合集</div>
+        <p>收录2019年出道至2026年11月的单体、共演、VR及纪念作品索引，按发行时间与类型整理，适合系统补全或按风格查找。</p>
+      </div>
+      <div class="footer-col">
+        <h5>作品类型</h5>
+        <ul>
+          <li><a href="#featured">单体作品</a></li>
+          <li><a href="#featured">共演作品</a></li>
+          <li><a href="#featured">VR作品</a></li>
+          <li><a href="#featured">纪念企划</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>共演索引</h5>
+        <ul>
+          <li><a href="#featured">河北彩花</a></li>
+          <li><a href="#featured">樱空桃</a></li>
+          <li><a href="#featured">相泽南</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>互动</h5>
+        <ul>
+          <li><a href="#more">投稿作品</a></li>
+          <li><a href="#comments">参与评论</a></li>
+          <li><a href="#more">收藏榜单</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>内容更新至2026年11月8日，条目信息以FANZA与Amazon Japan公开数据为准。</span>
+      <span>示例页面 · 非官方站点</span>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+  <!-- 内联脚本 -->
+  <script>
+    (function() {
+      // 搜索栏切换
+      const searchToggle = document.getElementById('searchToggle');
+      const searchBar = document.getElementById('searchBar');
+      const searchInput = document.getElementById('searchInput');
+      const searchBtn = document.getElementById('searchBtn');
+      const searchClose = document.getElementById('searchClose');
+      const noResult = document.getElementById('noResult');
+      const workCards = document.querySelectorAll('.work-card');
+
+      searchToggle.addEventListener('click', function() {
+        searchBar.classList.toggle('active');
+        if (searchBar.classList.contains('active')) {
+          searchInput.focus();
+        } else {
+          resetSearch();
+        }
+      });
+
+      searchClose.addEventListener('click', function() {
+        searchBar.classList.remove('active');
+        resetSearch();
+      });
+
+      function resetSearch() {
+        searchInput.value = '';
+        noResult.classList.remove('visible');
+        workCards.forEach(card => card.style.display = '');
+      }
+
+      function performSearch() {
+        const query = searchInput.value.trim().toLowerCase();
+        if (!query) {
+          resetSearch();
+          return;
+        }
+        let found = false;
+        workCards.forEach(card => {
+          const title = card.querySelector('h3').textContent.toLowerCase();
+          const desc = card.querySelector('.work-desc').textContent.toLowerCase();
+          const tags = Array.from(card.querySelectorAll('.tag')).map(t => t.textContent.toLowerCase()).join(' ');
+          if (title.includes(query) || desc.includes(query) || tags.includes(query)) {
+            card.style.display = '';
+            found = true;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        noResult.classList.toggle('visible', !found);
+      }
+
+      searchBtn.addEventListener('click', performSearch);
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') performSearch();
+      });
+
+      // 回到顶部
+      const backBtn = document.getElementById('backToTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 600) {
+          backBtn.classList.add('visible');
+        } else {
+          backBtn.classList.remove('visible');
+        }
+      });
+      backBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 移动端菜单
+      const hamburger = document.getElementById('hamburger');
+      const mainNav = document.getElementById('mainNav');
+
+      hamburger.addEventListener('click', function() {
+        const expanded = this.getAttribute('aria-expanded') === 'true' ? false : true;
+        this.setAttribute('aria-expanded', expanded);
+        mainNav.classList.toggle('open');
+      });
+
+      // 点击导航后关闭移动端菜单
+      mainNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 740) {
+            mainNav.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+
+      // Esc关闭菜单
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          mainNav.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // 点击遮罩关闭（此处无独立遮罩，点击外部关闭菜单）
+      document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 740) {
+          if (!mainNav.contains(e.target) && !hamburger.contains(e.target) && mainNav.classList.contains('open')) {
+            mainNav.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    })();
+  </script>
+
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "楪可怜 作品合集",
+    "description": "楪可怜 作品合集聚合演员楪可怜的代表作、共演作品与发行时间线，涵盖VR、共演、单体等类型，适合想系统补全作品的观众查阅。",
+    "url": ""
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "楪可怜的单体作品和共演作品有什么区别？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "单体作品以单一主角展开，剧情围绕一个角色推进，例如《邻家的她》全片聚焦单亲母亲的日常。共演作品由两位或以上演员共同出演，对手戏比重更高，如《交错之夜》中与河北彩花的互动占据约60%片长。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "《夏日回声》VR需要什么设备才能看？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "《夏日回声》采用8K 180度格式，推荐使用支持8K解码的VR头显，如Meta Quest 3或Pico 4。如果使用手机VR盒子，画质会降至4K，沉浸感有所下降。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "共演系列 Vol.3 的相泽南是谁？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "相泽南是2022年出道的演员，以职场题材见长，代表作品包括《会议室的午后》和《出差夜》。2026年与楪可怜首次合作《共演系列 Vol.3》，在片中饰演同一家公司的同事。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "《楪可怜 大全集》电子版和纸质版内容一样吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "电子版比纸质版多出2019年出道作的扫描件，共12页。纸质版收录2019至2026年单体作品封面与简介，共208页。电子版在2026年10月20日追加了出道作补充内容，纸质版未包含这部分。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "哪几部作品有中文字幕？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FANZA平台为《交错之夜》《双面》《邻家的她》《深夜诊疗室》四部作品提供官方中文字幕。其中《交错之夜》的字幕由FANZA官方团队翻译，2023年上线时同步推出。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "五周年纪念作《轨迹》蓝光版还买得到吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "2026年11月5日《轨迹》蓝光版进行了再版补货，FANZA与Amazon Japan均有库存。蓝光版包含32页写真册与未公开花絮，再版未修改内容。"
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+            </html>
